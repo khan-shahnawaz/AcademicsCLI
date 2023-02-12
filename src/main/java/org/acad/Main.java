@@ -1,7 +1,9 @@
 package org.acad;
-
+import java.sql.Connection;
+import DatabaseAccess.DBConnectionSingleton;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Connection connection = DBConnectionSingleton.getConnection();
+        System.out.println(connection);
     }
 }
