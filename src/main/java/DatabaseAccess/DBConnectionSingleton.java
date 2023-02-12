@@ -12,7 +12,7 @@ import java.util.Properties;
  */
 public class DBConnectionSingleton {
     final String PROPERTIES_FILE = "database.properties";
-    private static final DBConnectionSingleton INSTANCE = new DBConnectionSingleton();
+    private final static DBConnectionSingleton INSTANCE = new DBConnectionSingleton();
     private static Connection connection;
     private DBConnectionSingleton() {
         Properties properties = new Properties();
