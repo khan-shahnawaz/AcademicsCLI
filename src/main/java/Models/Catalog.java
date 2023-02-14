@@ -13,6 +13,8 @@ import java.util.Properties;
  */
 
 public class Catalog extends BaseModel {
+    private static final String PROPERTIES_FILE;
+    private static Properties properties;
     private String code;
     private String name;
     private String description;
@@ -28,7 +30,7 @@ public class Catalog extends BaseModel {
         PROPERTIES_FILE = "catalog.properties";
         try {
             properties = new Properties();
-            ClassLoader classLoader = Student.class.getClassLoader();
+            ClassLoader classLoader = Catalog.class.getClassLoader();
             InputStream inputStream = classLoader.getResourceAsStream(PROPERTIES_FILE);
             properties.load(inputStream);
         } catch (Exception e) {
@@ -36,6 +38,9 @@ public class Catalog extends BaseModel {
         }
     }
 
+    public Properties getProperties() {
+        return properties;
+    }
     public String getCode() {
         return code;
     }
@@ -130,7 +135,19 @@ public class Catalog extends BaseModel {
     }
 
     protected void putConditions(PreparedStatement preparedStatement) throws Exception {
-        preparedStatement.setString(10, this.code);
+        preparedStatement.setString(10, this.lastSavedValues.get("code"));
+    }
+
+    protected void updateLastSavedValues() {
+        this.lastSavedValues.put("code", this.code);
+        this.lastSavedValues.put("name", this.name);
+        this.lastSavedValues.put("description", this.description);
+        this.lastSavedValues.put("credits", String.valueOf(this.credits));
+        this.lastSavedValues.put("l", String.valueOf(this.l));
+        this.lastSavedValues.put("t", String.valueOf(this.t));
+        this.lastSavedValues.put("p", String.valueOf(this.p));
+        this.lastSavedValues.put("s", String.valueOf(this.s));
+        this.lastSavedValues.put("c", String.valueOf(this.c));
     }
 
     @Override

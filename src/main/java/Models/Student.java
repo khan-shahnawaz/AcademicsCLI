@@ -13,6 +13,8 @@ import java.util.Properties;
  */
 
 public class Student extends BaseModel {
+    private static final String PROPERTIES_FILE;
+    private static Properties properties;
     private String entryNumber;
     private String name;
     private String email;
@@ -35,6 +37,11 @@ public class Student extends BaseModel {
             e.printStackTrace();
         }
     }
+
+    public Properties getProperties() {
+        return properties;
+    }
+
     public String getEntryNumber() {
         return entryNumber;
     }
@@ -149,7 +156,21 @@ public class Student extends BaseModel {
     }
 
     protected void putConditions(PreparedStatement preparedStatement) throws Exception {
-        preparedStatement.setString(12, this.entryNumber);
+        preparedStatement.setString(12, this.lastSavedValues.get("entry_no"));
+    }
+
+    protected void updateLastSavedValues() {
+        this.lastSavedValues.put("entry_no", this.entryNumber);
+        this.lastSavedValues.put("name", this.name);
+        this.lastSavedValues.put("email", this.email);
+        this.lastSavedValues.put("phone", this.phone);
+        this.lastSavedValues.put("department", this.departmentCode);
+        this.lastSavedValues.put("entry_year", String.valueOf(this.entryYear));
+        this.lastSavedValues.put("address", this.address);
+        this.lastSavedValues.put("program", this.program);
+        this.lastSavedValues.put("cgpa", String.valueOf(this.cgpa));
+        this.lastSavedValues.put("credit_limit", String.valueOf(this.creditsLimit));
+        this.lastSavedValues.put("advisor", this.advisor);
     }
 
     protected void prepareDeleteStatement(PreparedStatement preparedStatement) throws Exception {

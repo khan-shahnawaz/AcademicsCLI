@@ -10,10 +10,24 @@ import java.util.ArrayList;
 class StudentTest {
     static Student student;
     static Student retrievedStudent;
+    static Department department;
+    static Instructor instructor;
 
     @BeforeAll
     static void init() {
         student = new Student();
+        department = new Department();
+        department.setId("CS");
+        department.setName("Computer Science");
+        System.out.println("Started department save");
+        department.save();
+        instructor = new Instructor();
+        instructor.setName("Anil Shukla");
+        instructor.setEmail("shukla@iitrpr.ac.in");
+        instructor.setPhone("1234567890");
+        instructor.setDepartmentCode("CS");
+        instructor.setAddress("Ropar");
+        instructor.save();
         student.setEntryNumber("2020CSB1123");
         student.setName("Shahnawaz Khan");
         student.setEmail("shahnawazkhan5172@gmail.com");
@@ -266,5 +280,7 @@ class StudentTest {
 
         Assertions.assertTrue(student.delete());
         Assertions.assertTrue(retrievedStudent.delete());
+        Assertions.assertTrue(instructor.delete());
+        Assertions.assertTrue(department.delete());
     }
 }

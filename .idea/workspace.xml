@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Completed DAO for student table">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/BaseModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Catalog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/base.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/catalog.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Models/CatalogTest.java" afterDir="false" />
+    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Added catalog model">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Instructor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/department.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/instructor.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Models/DepartmentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Models/InstructorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseAccess/DBConnectionSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DatabaseAccess/DBConnectionSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/BaseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Catalog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/student.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/student.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Models/StudentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Models/StudentTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +83,7 @@
     <option name="ignoreSourceCode" value="false" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2LchMNt7ZjrWz0VbicFDygsjzEM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -97,7 +98,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "Models.BaseModel",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "last_opened_file_path": "D:/Java Projects/AcademicsCLI/db/setup.sql",
@@ -123,8 +124,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
-      <recent name="Models.BaseModel" />
       <recent name="" />
+      <recent name="Models.BaseModel" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="Models" />
@@ -255,7 +256,7 @@
       <updated>1676176230471</updated>
       <workItem from="1676176231852" duration="2211000" />
       <workItem from="1676178486344" duration="35824000" />
-      <workItem from="1676267163219" duration="19391000" />
+      <workItem from="1676267163219" duration="38581000" />
     </task>
     <task id="LOCAL-00001" summary="Added class for database connection">
       <created>1676203690303</created>
@@ -271,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676229572288</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added catalog model">
+      <created>1676381999076</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676381999076</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +299,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added class for database connection" />
     <MESSAGE value="Completed DAO for student table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed DAO for student table" />
+    <MESSAGE value="Added catalog model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added catalog model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -308,6 +317,6 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1676348718165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1676401739697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
