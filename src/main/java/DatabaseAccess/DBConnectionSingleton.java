@@ -11,12 +11,13 @@ import java.util.Properties;
  * @since 2023-02-12
  */
 public class DBConnectionSingleton {
-    final String PROPERTIES_FILE = "database.properties";
-    private final static DBConnectionSingleton INSTANCE = new DBConnectionSingleton();
+    final static String PROPERTIES_FILE = "database.properties";
     private static Connection connection;
-    private DBConnectionSingleton() {
-        Properties properties = new Properties();
-        ClassLoader classLoader = getClass().getClassLoader();
+    static Properties properties;
+    static ClassLoader classLoader;
+    static  {
+        properties = new Properties();
+        classLoader = DBConnectionSingleton.class.getClassLoader();
         InputStream inputStream = classLoader.getResourceAsStream(PROPERTIES_FILE);
         try {
             properties.load(inputStream);

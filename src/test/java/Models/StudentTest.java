@@ -4,10 +4,12 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import java.util.ArrayList;
 
 @TestMethodOrder(OrderAnnotation.class)
 class StudentTest {
     static Student student;
+    static Student retrievedStudent;
 
     @BeforeAll
     static void init() {
@@ -206,6 +208,7 @@ class StudentTest {
     void getIsSaved() {
         assertFalse(student.getIsSaved());
     }
+
     @Test
     @Order(24)
     void setIsSaved() {
@@ -226,7 +229,42 @@ class StudentTest {
 
     @Test
     @Order(26)
+    void retrieve() {
+        retrievedStudent = Student.retrieve(student.getEntryNumber());
+        assertEquals(student.getEntryNumber(), retrievedStudent.getEntryNumber());
+        assertEquals(student.getName(), retrievedStudent.getName());
+        assertEquals(student.getEmail(), retrievedStudent.getEmail());
+        assertEquals(student.getPhone(), retrievedStudent.getPhone());
+        assertEquals(student.getDepartmentCode(), retrievedStudent.getDepartmentCode());
+        assertEquals(student.getEntryYear(), retrievedStudent.getEntryYear());
+        assertEquals(student.getAddress(), retrievedStudent.getAddress());
+        assertEquals(student.getProgram(), retrievedStudent.getProgram());
+        assertEquals(student.getCgpa(), retrievedStudent.getCgpa());
+        assertEquals(student.getCreditsLimit(), retrievedStudent.getCreditsLimit());
+        assertEquals(student.getAdvisor(), retrievedStudent.getAdvisor());
+        retrievedStudent.setIsSaved(false);
+        retrievedStudent.setEntryNumber("2019CSB0301");
+        retrievedStudent.save();
+    }
+
+    @Test
+    @Order(27)
+    void retrieveAll() {
+        ArrayList<String> entryNumbers = new ArrayList<>();
+        ArrayList<Student> students = Student.retrieveAll();
+        Assertions.assertNotNull(students);
+        for (Student thisStudent : students) {
+            entryNumbers.add(thisStudent.getEntryNumber());
+        }
+        Assertions.assertTrue(entryNumbers.contains(student.getEntryNumber()));
+        Assertions.assertTrue(entryNumbers.contains(retrievedStudent.getEntryNumber()));
+    }
+
+    @Test
+    @Order(28)
     void delete() {
+
         Assertions.assertTrue(student.delete());
+        Assertions.assertTrue(retrievedStudent.delete());
     }
 }

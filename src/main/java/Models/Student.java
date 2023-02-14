@@ -1,10 +1,8 @@
 package Models;
-import DatabaseAccess.DBConnectionSingleton;
-import DatabaseAccess.DAOInterface;
 import java.io.InputStream;
 import java.sql.PreparedStatement;
-import java.util.HashMap;
-import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Properties;
 
 /**
@@ -14,8 +12,7 @@ import java.util.Properties;
  * @since 2023-02-12
  */
 
-public class Student implements DAOInterface {
-    private static final String PROPERTIES_FILE = "student.properties";
+public class Student extends BaseModel {
     private String entryNumber;
     private String name;
     private String email;
@@ -27,18 +24,8 @@ public class Student implements DAOInterface {
     private float cgpa;
     private float creditsLimit;
     private String advisor;
-    private final Connection connection;
-    private final HashMap<String, String> lastSavedValues;
-    private boolean isSaved;
-    private static Properties properties;
-
-    public Student() {
-        this.connection = DBConnectionSingleton.getConnection();
-        this.lastSavedValues = new HashMap<>();
-        this.isSaved = false;
-    }
-
     static {
+        PROPERTIES_FILE = "student.properties";
         try {
             properties = new Properties();
             ClassLoader classLoader = Student.class.getClassLoader();
@@ -48,7 +35,6 @@ public class Student implements DAOInterface {
             e.printStackTrace();
         }
     }
-
     public String getEntryNumber() {
         return entryNumber;
     }
@@ -148,80 +134,75 @@ public class Student implements DAOInterface {
         this.advisor = advisor;
     }
 
-    public boolean getIsSaved() {
-        return this.isSaved;
-    }
-    public void setIsSaved(boolean isSaved) {
-        this.isSaved = isSaved;
+    protected void putValues(PreparedStatement preparedStatement) throws Exception {
+        preparedStatement.setString(1, this.entryNumber);
+        preparedStatement.setString(2, this.name);
+        preparedStatement.setString(3, this.email);
+        preparedStatement.setString(4, this.phone);
+        preparedStatement.setString(5, this.departmentCode);
+        preparedStatement.setInt(6, this.entryYear);
+        preparedStatement.setString(7, this.address);
+        preparedStatement.setString(8, this.program);
+        preparedStatement.setFloat(9, this.cgpa);
+        preparedStatement.setFloat(10, this.creditsLimit);
+        preparedStatement.setString(11, this.advisor);
     }
 
-    @Override
-    public boolean save() {
-        if (!this.isSaved) {
-            try {
-                int numRowInserted;
-                PreparedStatement preparedStatement = this.connection.prepareStatement(properties.getProperty("insert"));
-                preparedStatement.setString(1, this.entryNumber);
-                preparedStatement.setString(2, this.name);
-                preparedStatement.setString(3, this.email);
-                preparedStatement.setString(4, this.phone);
-                preparedStatement.setString(5, this.departmentCode);
-                preparedStatement.setInt(6, this.entryYear);
-                preparedStatement.setString(7, this.address);
-                preparedStatement.setString(8, this.program);
-                preparedStatement.setFloat(9, this.cgpa);
-                preparedStatement.setFloat(10, this.creditsLimit);
-                preparedStatement.setString(11, this.advisor);
-                numRowInserted = preparedStatement.executeUpdate();
-                if (numRowInserted == 0) {
-                    throw new Exception("Insertion failed");
-                }
-                this.isSaved = true;
-                return true;
+    protected void putConditions(PreparedStatement preparedStatement) throws Exception {
+        preparedStatement.setString(12, this.entryNumber);
+    }
 
-            } catch (Exception e) {
-                return false;
+    protected void prepareDeleteStatement(PreparedStatement preparedStatement) throws Exception {
+        preparedStatement.setString(1, this.entryNumber);
+    }
+
+    private static void fillDetails(Student student, ResultSet resultSet) throws Exception {
+        student.setEntryNumber(resultSet.getString("entry_no"));
+        student.setName(resultSet.getString("name"));
+        student.setEmail(resultSet.getString("email"));
+        student.setPhone(resultSet.getString("phone"));
+        student.setDepartmentCode(resultSet.getString("department"));
+        student.setEntryYear(resultSet.getInt("entry_year"));
+        student.setAddress(resultSet.getString("address"));
+        student.setProgram(resultSet.getString("program"));
+        student.setCgpa(resultSet.getFloat("cgpa"));
+        student.setCreditsLimit(resultSet.getFloat("credit_limit"));
+        student.setAdvisor(resultSet.getString("advisor"));
+    }
+
+    public static Student retrieve(String entryNumber) {
+        try {
+            Student student = new Student();
+            PreparedStatement preparedStatement = Student.connection.prepareStatement(properties.getProperty("select"));
+            preparedStatement.setString(1, entryNumber);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                fillDetails(student, resultSet);
+                student.setIsSaved(true);
+                return student;
+            } else {
+                throw new Exception("No rows found");
             }
-        } else {
-            try {
-                int numRowUpdated;
-                PreparedStatement preparedStatement = this.connection.prepareStatement(properties.getProperty("update"));
-                preparedStatement.setString(1, this.entryNumber);
-                preparedStatement.setString(2, this.name);
-                preparedStatement.setString(3, this.email);
-                preparedStatement.setString(4, this.phone);
-                preparedStatement.setString(5, this.departmentCode);
-                preparedStatement.setInt(6, this.entryYear);
-                preparedStatement.setString(7, this.address);
-                preparedStatement.setString(8, this.program);
-                preparedStatement.setFloat(9, this.cgpa);
-                preparedStatement.setFloat(10, this.creditsLimit);
-                preparedStatement.setString(11, this.advisor);
-                preparedStatement.setString(12, this.lastSavedValues.get("entry_no"));
-                numRowUpdated = preparedStatement.executeUpdate();
-                if (numRowUpdated == 0) {
-                    throw new Exception("No rows affected");
-                }
-                return true;
-            } catch (Exception e) {
-                return false;
-            }
+        } catch (Exception e) {
+            return null;
         }
     }
-    @Override
-    public boolean delete() {
+
+    public static ArrayList<Student> retrieveAll() {
         try {
-            int numAffectedRows;
-            PreparedStatement preparedStatement = this.connection.prepareStatement(properties.getProperty("delete"));
-            preparedStatement.setString(1, this.entryNumber);
-            numAffectedRows = preparedStatement.executeUpdate();
-            if (numAffectedRows == 0) {
-                throw new Exception("No rows affected");
+            ArrayList<Student> students = new ArrayList<>();
+            Student student;
+            PreparedStatement preparedStatement = Student.connection.prepareStatement(properties.getProperty("selectAll"));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                student = new Student();
+                fillDetails(student, resultSet);
+                student.setIsSaved(true);
+                students.add(student);
             }
-            this.isSaved = false;
-            return true;
+            return students;
         } catch (Exception e) {
-            return false;
+            return null;
         }
     }
 }
