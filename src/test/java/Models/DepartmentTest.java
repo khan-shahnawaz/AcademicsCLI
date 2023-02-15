@@ -1,10 +1,11 @@
 package Models;
 
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(OrderAnnotation.class)
 class DepartmentTest {
@@ -73,7 +74,6 @@ class DepartmentTest {
         assertEquals(department.getName(), retrievedDepartment.getName());
         retrievedDepartment.setId("EE");
         retrievedDepartment.setIsSaved(false);
-        System.out.println(retrievedDepartment.getId());
         retrievedDepartment.save();
     }
 

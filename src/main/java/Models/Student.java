@@ -1,4 +1,5 @@
 package Models;
+
 import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +8,7 @@ import java.util.Properties;
 
 /**
  * This class represents a student.
+ *
  * @author Shahnawaz Khan
  * @version 1.0
  * @since 2023-02-12
@@ -15,6 +17,19 @@ import java.util.Properties;
 public class Student extends BaseModel {
     private static final String PROPERTIES_FILE;
     private static Properties properties;
+
+    static {
+        PROPERTIES_FILE = "student.properties";
+        try {
+            properties = new Properties();
+            ClassLoader classLoader = Student.class.getClassLoader();
+            InputStream inputStream = classLoader.getResourceAsStream(PROPERTIES_FILE);
+            properties.load(inputStream);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private String entryNumber;
     private String name;
     private String email;
@@ -26,15 +41,54 @@ public class Student extends BaseModel {
     private float cgpa;
     private float creditsLimit;
     private String advisor;
-    static {
-        PROPERTIES_FILE = "student.properties";
+
+    private static void fillDetails(Student student, ResultSet resultSet) throws Exception {
+        student.setEntryNumber(resultSet.getString("entry_no"));
+        student.setName(resultSet.getString("name"));
+        student.setEmail(resultSet.getString("email"));
+        student.setPhone(resultSet.getString("phone"));
+        student.setDepartmentCode(resultSet.getString("department"));
+        student.setEntryYear(resultSet.getInt("entry_year"));
+        student.setAddress(resultSet.getString("address"));
+        student.setProgram(resultSet.getString("program"));
+        student.setCgpa(resultSet.getFloat("cgpa"));
+        student.setCreditsLimit(resultSet.getFloat("credit_limit"));
+        student.setAdvisor(resultSet.getString("advisor"));
+    }
+
+    public static Student retrieve(String entryNumber) {
         try {
-            properties = new Properties();
-            ClassLoader classLoader = Student.class.getClassLoader();
-            InputStream inputStream = classLoader.getResourceAsStream(PROPERTIES_FILE);
-            properties.load(inputStream);
+            Student student = new Student();
+            PreparedStatement preparedStatement = Student.connection.prepareStatement(properties.getProperty("select"));
+            preparedStatement.setString(1, entryNumber);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                fillDetails(student, resultSet);
+                student.setIsSaved(true);
+                return student;
+            } else {
+                throw new Exception("No rows found");
+            }
         } catch (Exception e) {
-            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static ArrayList<Student> retrieveAll() {
+        try {
+            ArrayList<Student> students = new ArrayList<>();
+            Student student;
+            PreparedStatement preparedStatement = Student.connection.prepareStatement(properties.getProperty("selectAll"));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                student = new Student();
+                fillDetails(student, resultSet);
+                student.setIsSaved(true);
+                students.add(student);
+            }
+            return students;
+        } catch (Exception e) {
+            return null;
         }
     }
 
@@ -175,55 +229,5 @@ public class Student extends BaseModel {
 
     protected void prepareDeleteStatement(PreparedStatement preparedStatement) throws Exception {
         preparedStatement.setString(1, this.entryNumber);
-    }
-
-    private static void fillDetails(Student student, ResultSet resultSet) throws Exception {
-        student.setEntryNumber(resultSet.getString("entry_no"));
-        student.setName(resultSet.getString("name"));
-        student.setEmail(resultSet.getString("email"));
-        student.setPhone(resultSet.getString("phone"));
-        student.setDepartmentCode(resultSet.getString("department"));
-        student.setEntryYear(resultSet.getInt("entry_year"));
-        student.setAddress(resultSet.getString("address"));
-        student.setProgram(resultSet.getString("program"));
-        student.setCgpa(resultSet.getFloat("cgpa"));
-        student.setCreditsLimit(resultSet.getFloat("credit_limit"));
-        student.setAdvisor(resultSet.getString("advisor"));
-    }
-
-    public static Student retrieve(String entryNumber) {
-        try {
-            Student student = new Student();
-            PreparedStatement preparedStatement = Student.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setString(1, entryNumber);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(student, resultSet);
-                student.setIsSaved(true);
-                return student;
-            } else {
-                throw new Exception("No rows found");
-            }
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    public static ArrayList<Student> retrieveAll() {
-        try {
-            ArrayList<Student> students = new ArrayList<>();
-            Student student;
-            PreparedStatement preparedStatement = Student.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                student = new Student();
-                fillDetails(student, resultSet);
-                student.setIsSaved(true);
-                students.add(student);
-            }
-            return students;
-        } catch (Exception e) {
-            return null;
-        }
     }
 }

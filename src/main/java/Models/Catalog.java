@@ -1,4 +1,5 @@
 package Models;
+
 import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,24 +8,14 @@ import java.util.Properties;
 
 /**
  * This class represents a catalog.
+ *
  * @author Shahnawaz Khan
  * @version 1.0
  * @since 2023-02-12
  */
-
 public class Catalog extends BaseModel {
     private static final String PROPERTIES_FILE;
     private static Properties properties;
-    private String code;
-    private String name;
-    private String description;
-    private float credits;
-    private float l;
-    private float t;
-    private float p;
-    private float s;
-    private float c;
-
 
     static {
         PROPERTIES_FILE = "catalog.properties";
@@ -38,9 +29,68 @@ public class Catalog extends BaseModel {
         }
     }
 
+    private String code;
+    private String name;
+    private String description;
+    private float credits;
+    private float l;
+    private float t;
+    private float p;
+    private float s;
+    private float c;
+
+    private static void fillDetails(Catalog catalog, ResultSet resultSet) throws Exception {
+        catalog.setCode(resultSet.getString("code"));
+        catalog.setName(resultSet.getString("name"));
+        catalog.setDescription(resultSet.getString("description"));
+        catalog.setCredits(resultSet.getFloat("credits"));
+        catalog.setL(resultSet.getFloat("l"));
+        catalog.setT(resultSet.getFloat("t"));
+        catalog.setP(resultSet.getFloat("p"));
+        catalog.setS(resultSet.getFloat("s"));
+        catalog.setC(resultSet.getFloat("c"));
+    }
+
+    public static Catalog retrieve(String code) {
+        try {
+            Catalog catalog = new Catalog();
+            PreparedStatement preparedStatement = Catalog.connection.prepareStatement(properties.getProperty("select"));
+            preparedStatement.setString(1, code);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                fillDetails(catalog, resultSet);
+                catalog.setIsSaved(true);
+                return catalog;
+            } else {
+                throw new Exception("No rows found");
+            }
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static ArrayList<Catalog> retrieveAll() {
+        try {
+            ArrayList<Catalog> catalogs = new ArrayList<>();
+            Catalog catalog;
+            PreparedStatement preparedStatement = Catalog.connection.prepareStatement(properties.getProperty("selectAll"));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                catalog = new Catalog();
+                fillDetails(catalog, resultSet);
+                catalog.setIsSaved(true);
+                catalogs.add(catalog);
+            }
+            return catalogs;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     public Properties getProperties() {
         return properties;
     }
+
     public String getCode() {
         return code;
     }
@@ -150,57 +200,8 @@ public class Catalog extends BaseModel {
         this.lastSavedValues.put("c", String.valueOf(this.c));
     }
 
-    @Override
     protected void prepareDeleteStatement(PreparedStatement preparedStatement) throws Exception {
         preparedStatement.setString(1, this.code);
-    }
-
-    private static void fillDetails(Catalog catalog, ResultSet resultSet) throws Exception {
-        catalog.setCode(resultSet.getString("code"));
-        catalog.setName(resultSet.getString("name"));
-        catalog.setDescription(resultSet.getString("description"));
-        catalog.setCredits(resultSet.getFloat("credits"));
-        catalog.setL(resultSet.getFloat("l"));
-        catalog.setT(resultSet.getFloat("t"));
-        catalog.setP(resultSet.getFloat("p"));
-        catalog.setS(resultSet.getFloat("s"));
-        catalog.setC(resultSet.getFloat("c"));
-    }
-
-    public static Catalog retrieve(String code) {
-        try {
-            Catalog catalog = new Catalog();
-            PreparedStatement preparedStatement = Catalog.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setString(1, code);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(catalog, resultSet);
-                catalog.setIsSaved(true);
-                return catalog;
-            } else {
-                throw new Exception("No rows found");
-            }
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    public static ArrayList<Catalog> retrieveAll() {
-        try {
-            ArrayList<Catalog> catalogs = new ArrayList<>();
-            Catalog catalog;
-            PreparedStatement preparedStatement = Catalog.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                catalog = new Catalog();
-                fillDetails(catalog, resultSet);
-                catalog.setIsSaved(true);
-                catalogs.add(catalog);
-            }
-            return catalogs;
-        } catch (Exception e) {
-            return null;
-        }
     }
 
 

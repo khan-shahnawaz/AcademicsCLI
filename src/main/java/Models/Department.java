@@ -1,4 +1,5 @@
 package Models;
+
 import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +8,7 @@ import java.util.Properties;
 
 /**
  * This class represents a Department.
+ *
  * @author Shahnawaz Khan
  * @version 1.0
  * @since 2023-02-14
@@ -15,8 +17,6 @@ import java.util.Properties;
 public class Department extends BaseModel {
     private static final String PROPERTIES_FILE;
     private static Properties properties;
-    private String id;
-    private String name;
 
     static {
         PROPERTIES_FILE = "department.properties";
@@ -27,6 +27,49 @@ public class Department extends BaseModel {
             properties.load(inputStream);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private String id;
+    private String name;
+
+    private static void fillDetails(Department department, ResultSet resultSet) throws Exception {
+        department.setId(resultSet.getString("dep_id"));
+        department.setName(resultSet.getString("name"));
+    }
+
+    public static Department retrieve(String code) {
+        try {
+            Department department = new Department();
+            PreparedStatement preparedStatement = Department.connection.prepareStatement(properties.getProperty("select"));
+            preparedStatement.setString(1, code);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                fillDetails(department, resultSet);
+                department.setIsSaved(true);
+                return department;
+            }
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static ArrayList<Department> retrieveAll() {
+        try {
+            ArrayList<Department> departments = new ArrayList<>();
+            PreparedStatement preparedStatement = Department.connection.prepareStatement(properties.getProperty("selectAll"));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Department department = new Department();
+                fillDetails(department, resultSet);
+                department.setIsSaved(true);
+                departments.add(department);
+            }
+            return departments;
+        } catch (Exception e) {
+            return null;
         }
     }
 
@@ -66,53 +109,7 @@ public class Department extends BaseModel {
         this.lastSavedValues.put("name", this.name);
     }
 
-    @Override
     protected void prepareDeleteStatement(PreparedStatement preparedStatement) throws Exception {
-        System.out.println("Delete"+preparedStatement.toString());
         preparedStatement.setString(1, this.id);
-        System.out.println("Delete2"+preparedStatement.toString());
-    }
-
-    private static void fillDetails(Department department, ResultSet resultSet) throws Exception {
-        department.setId(resultSet.getString("dep_id"));
-        department.setName(resultSet.getString("name"));
-    }
-
-    public static Department retrieve(String code) {
-        try {
-            Department department = new Department();
-            PreparedStatement preparedStatement = Department.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setString(1, code);
-            System.out.println(preparedStatement.toString());
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(department, resultSet);
-                System.out.println(department.getId());
-                department.setIsSaved(true);
-                return department;
-            }
-            System.out.println("No result");
-            return null;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    public static ArrayList<Department> retrieveAll() {
-        try {
-            ArrayList<Department> departments = new ArrayList<>();
-            PreparedStatement preparedStatement = Department.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                Department department = new Department();
-                fillDetails(department, resultSet);
-                department.setIsSaved(true);
-                departments.add(department);
-            }
-            return departments;
-        } catch (Exception e) {
-            return null;
-        }
     }
 }

@@ -1,8 +1,10 @@
 package Models;
 
 import org.junit.jupiter.api.*;
+
 import java.util.ArrayList;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class InstructorTest {
@@ -17,7 +19,6 @@ class InstructorTest {
         department = new Department();
         department.setId("CS");
         department.setName("Computer Science");
-        System.out.println("Started department saves");
         department.save();
         instructor.setName("Anil Shukla");
         instructor.setEmail("shukla@iitrpr.ac.in");
@@ -121,20 +122,16 @@ class InstructorTest {
         instructor.setIsSaved(newIsSaved);
         assertEquals(newIsSaved, instructor.getIsSaved());
         instructor.setIsSaved(false);
-        System.out.println(instructor.getIsSaved()+"abc");
     }
 
     @Test
     @Order(13)
     void save() {
-        System.out.println(instructor.getIsSaved()+"aa");
         Assertions.assertTrue(instructor.save());
         instructor.setEmail("a@b.com");
         Assertions.assertTrue(instructor.save());
         instructor.setEmail("shukla@iitrpr.ac.in");
         Assertions.assertTrue(instructor.save());
-        System.out.println(instructor.getIsSaved()+"cb");
-        System.out.println(Instructor.retrieve("shukla@iitrpr.ac.in").getName());
     }
 
     @Test
@@ -157,11 +154,10 @@ class InstructorTest {
     void retrieveAll() {
         instructors = Instructor.retrieveAll();
         Assertions.assertNotNull(instructors);
-        ArrayList <String> emails = new ArrayList<>();
+        ArrayList<String> emails = new ArrayList<>();
         for (Instructor instructor : instructors) {
             emails.add(instructor.getEmail());
         }
-        System.out.println(emails);
         Assertions.assertTrue(emails.contains(instructor.getEmail()));
         Assertions.assertTrue(emails.contains(retrievedInstructor.getEmail()));
     }

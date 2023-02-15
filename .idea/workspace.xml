@@ -4,23 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Added catalog model">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Instructor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/department.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/instructor.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Models/DepartmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Models/InstructorTest.java" afterDir="false" />
+    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Completed Models package">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/AcademicCalender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/CourseCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/DefaultPrerequisite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Enrollment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Offering.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Prerequisite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Models/TeachingTeam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/academic_calender.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/course_category.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/enrollment.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/offering.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/prerequisite.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/prerequisite_default.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/teaching_team.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Models/AcademicCalenderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Models/CourseCategoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Models/DefaultPrerequisiteTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Models/EnrollmentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Models/OfferingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Models/PrerequisiteTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Models/TeachingTeamTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseAccess/DAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DatabaseAccess/DAOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseAccess/DBConnectionSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DatabaseAccess/DBConnectionSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/BaseModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Catalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Instructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Instructor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/department.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/department.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseAccess/DBConnectionSingletonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseAccess/DBConnectionSingletonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Models/CatalogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Models/CatalogTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Models/DepartmentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Models/DepartmentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Models/InstructorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Models/InstructorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Models/StudentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Models/StudentTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="D:\Java Projects\AcademicsCLI\htmlReport" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -83,7 +112,7 @@
     <option name="ignoreSourceCode" value="false" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2LchMNt7ZjrWz0VbicFDygsjzEM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -256,7 +285,7 @@
       <updated>1676176230471</updated>
       <workItem from="1676176231852" duration="2211000" />
       <workItem from="1676178486344" duration="35824000" />
-      <workItem from="1676267163219" duration="38581000" />
+      <workItem from="1676267163219" duration="71137000" />
     </task>
     <task id="LOCAL-00001" summary="Added class for database connection">
       <created>1676203690303</created>
@@ -279,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676381999076</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Department and Instructor model">
+      <created>1676401887194</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676401887194</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +336,10 @@
     <MESSAGE value="Added class for database connection" />
     <MESSAGE value="Completed DAO for student table" />
     <MESSAGE value="Added catalog model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added catalog model" />
+    <MESSAGE value="Added Department and Instructor model" />
+    <MESSAGE value="Compelted Models package" />
+    <MESSAGE value="Completed Models package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed Models package" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -317,6 +356,6 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1676401739697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1676489925326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

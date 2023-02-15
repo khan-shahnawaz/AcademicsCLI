@@ -1,10 +1,11 @@
 package Models;
 
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(OrderAnnotation.class)
 class CatalogTest {
@@ -24,6 +25,7 @@ class CatalogTest {
         catalog.setS(6);
         catalog.setC(4);
     }
+
     @Test
     @Order(1)
     void getCode() {

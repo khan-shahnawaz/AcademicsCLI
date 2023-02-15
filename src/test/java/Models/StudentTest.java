@@ -1,10 +1,11 @@
 package Models;
 
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(OrderAnnotation.class)
 class StudentTest {
@@ -19,7 +20,6 @@ class StudentTest {
         department = new Department();
         department.setId("CS");
         department.setName("Computer Science");
-        System.out.println("Started department save");
         department.save();
         instructor = new Instructor();
         instructor.setName("Anil Shukla");
@@ -283,4 +283,6 @@ class StudentTest {
         Assertions.assertTrue(instructor.delete());
         Assertions.assertTrue(department.delete());
     }
+
+
 }
