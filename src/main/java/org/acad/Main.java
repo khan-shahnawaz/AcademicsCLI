@@ -3,16 +3,24 @@ package org.acad;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
-@Command(name = "acad", mixinStandardHelpOptions = true, subcommands = {SubcommandCatalog.class}, version = "acad 0.1",
+import java.util.concurrent.Callable;
+
+@Command(name = "acad", mixinStandardHelpOptions = true, subcommands = {Catalog.class, Configuration.class}, version = "acad 0.1",
         description = "A command line interface for the Academic database.")
-public class Main implements Runnable {
+public class Main implements Callable<Integer> {
+
     public static void main(String[] args) {
         int exitCode = new CommandLine(new Main()).execute(args);
-        System.exit(exitCode);
+        if (exitCode == 0) {
+            System.exit(0);
+        }
+        System.exit(1);
     }
 
     @Override
-    public void run() {
+    public Integer call() {
         System.out.println("Use --help for more information.");
+        return 0;
     }
+
 }

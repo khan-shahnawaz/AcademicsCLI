@@ -51,40 +51,32 @@ public class Catalog extends BaseModel {
         catalog.setC(resultSet.getFloat("c"));
     }
 
-    public static Catalog retrieve(String code) {
-        try {
-            Catalog catalog = new Catalog();
-            PreparedStatement preparedStatement = Catalog.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setString(1, code);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(catalog, resultSet);
-                catalog.setIsSaved(true);
-                return catalog;
-            } else {
-                throw new Exception("No rows found");
-            }
-        } catch (Exception e) {
-            return null;
+    public static Catalog retrieve(String code) throws Exception {
+        Catalog catalog = new Catalog();
+        PreparedStatement preparedStatement = Catalog.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setString(1, code);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            fillDetails(catalog, resultSet);
+            catalog.setIsSaved(true);
+            return catalog;
         }
+
+        return null;
     }
 
-    public static ArrayList<Catalog> retrieveAll() {
-        try {
-            ArrayList<Catalog> catalogs = new ArrayList<>();
-            Catalog catalog;
-            PreparedStatement preparedStatement = Catalog.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                catalog = new Catalog();
-                fillDetails(catalog, resultSet);
-                catalog.setIsSaved(true);
-                catalogs.add(catalog);
-            }
-            return catalogs;
-        } catch (Exception e) {
-            return null;
+    public static ArrayList<Catalog> retrieveAll() throws Exception {
+        ArrayList<Catalog> catalogs = new ArrayList<>();
+        Catalog catalog;
+        PreparedStatement preparedStatement = Catalog.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            catalog = new Catalog();
+            fillDetails(catalog, resultSet);
+            catalog.setIsSaved(true);
+            catalogs.add(catalog);
         }
+        return catalogs;
     }
 
     public Properties getProperties() {

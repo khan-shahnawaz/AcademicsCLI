@@ -39,41 +39,32 @@ public class DefaultPrerequisite extends BaseModel {
         defaultPrerequisite.setMinGrade(resultSet.getString("min_grade"));
     }
 
-    public static DefaultPrerequisite retrieve(String catalogCode, String prerequisiteCode) {
-        try {
-            DefaultPrerequisite defaultPrerequisite = new DefaultPrerequisite();
-            PreparedStatement preparedStatement = DefaultPrerequisite.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setString(1, catalogCode);
-            preparedStatement.setString(2, prerequisiteCode);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(defaultPrerequisite, resultSet);
-                defaultPrerequisite.setIsSaved(true);
-                return defaultPrerequisite;
-            } else {
-                throw new Exception("No rows found");
-            }
-        } catch (Exception e) {
-            return null;
+    public static DefaultPrerequisite retrieve(String catalogCode, String prerequisiteCode) throws Exception {
+        DefaultPrerequisite defaultPrerequisite = new DefaultPrerequisite();
+        PreparedStatement preparedStatement = DefaultPrerequisite.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setString(1, catalogCode);
+        preparedStatement.setString(2, prerequisiteCode);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            fillDetails(defaultPrerequisite, resultSet);
+            defaultPrerequisite.setIsSaved(true);
+            return defaultPrerequisite;
         }
+        return null;
     }
 
-    public static ArrayList<DefaultPrerequisite> retrieveAll() {
-        try {
-            ArrayList<DefaultPrerequisite> defaultPrerequisites = new ArrayList<>();
-            DefaultPrerequisite defaultPrerequisite;
-            PreparedStatement preparedStatement = DefaultPrerequisite.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                defaultPrerequisite = new DefaultPrerequisite();
-                fillDetails(defaultPrerequisite, resultSet);
-                defaultPrerequisite.setIsSaved(true);
-                defaultPrerequisites.add(defaultPrerequisite);
-            }
-            return defaultPrerequisites;
-        } catch (Exception e) {
-            return null;
+    public static ArrayList<DefaultPrerequisite> retrieveAll() throws Exception {
+        ArrayList<DefaultPrerequisite> defaultPrerequisites = new ArrayList<>();
+        DefaultPrerequisite defaultPrerequisite;
+        PreparedStatement preparedStatement = DefaultPrerequisite.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            defaultPrerequisite = new DefaultPrerequisite();
+            fillDetails(defaultPrerequisite, resultSet);
+            defaultPrerequisite.setIsSaved(true);
+            defaultPrerequisites.add(defaultPrerequisite);
         }
+        return defaultPrerequisites;
     }
 
     public Properties getProperties() {

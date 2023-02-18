@@ -12,4 +12,10 @@ class DBConnectionSingletonTest {
         Connection connection = DBConnectionSingleton.getConnection();
         Assertions.assertNotNull(connection);
     }
+
+    @Test
+    void restartConnection() {
+        Connection connection = DBConnectionSingleton.restartConnection();
+        Assertions.assertNotNull(connection);
+    }
 }

@@ -136,7 +136,7 @@ class InstructorTest {
 
     @Test
     @Order(14)
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedInstructor = Instructor.retrieve("shukla@iitrpr.ac.in");
         assertEquals(instructor.getName(), retrievedInstructor.getName());
         assertEquals(instructor.getEmail(), retrievedInstructor.getEmail());
@@ -151,7 +151,7 @@ class InstructorTest {
 
     @Test
     @Order(15)
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         instructors = Instructor.retrieveAll();
         Assertions.assertNotNull(instructors);
         ArrayList<String> emails = new ArrayList<>();

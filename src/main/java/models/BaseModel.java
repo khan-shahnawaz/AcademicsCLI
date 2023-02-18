@@ -19,12 +19,15 @@ import java.util.Properties;
 public abstract class BaseModel implements DAOInterface {
     protected static Connection connection;
     protected static String PROPERTIES_FILE = "base.properties";
+
+    static {
+        BaseModel.connection = DBConnectionSingleton.getConnection();
+    }
+
     protected final HashMap<String, String> lastSavedValues;
     protected boolean isSaved;
 
     public BaseModel() {
-
-        BaseModel.connection = DBConnectionSingleton.getConnection();
         this.lastSavedValues = new HashMap<>();
         this.isSaved = false;
     }
@@ -58,6 +61,7 @@ public abstract class BaseModel implements DAOInterface {
                 return "00000";
 
             } catch (SQLException e) {
+                e.printStackTrace();
                 return e.getSQLState();
             } catch (Exception e) {
                 throw new RuntimeException(e);

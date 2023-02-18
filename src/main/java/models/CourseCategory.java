@@ -44,44 +44,35 @@ public class CourseCategory extends BaseModel {
         courseCategory.setProgram(resultSet.getString("program"));
     }
 
-    public static CourseCategory retrieve(int id, String type, int entryYear, String department, String program) {
-        try {
-            CourseCategory courseCategory = new CourseCategory();
-            PreparedStatement preparedStatement = CourseCategory.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setInt(1, id);
-            preparedStatement.setString(2, type);
-            preparedStatement.setInt(3, entryYear);
-            preparedStatement.setString(4, department);
-            preparedStatement.setString(5, program);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(courseCategory, resultSet);
-                courseCategory.setIsSaved(true);
-                return courseCategory;
-            } else {
-                throw new Exception("No rows found");
-            }
-        } catch (Exception e) {
-            return null;
+    public static CourseCategory retrieve(int id, String type, int entryYear, String department, String program) throws Exception {
+        CourseCategory courseCategory = new CourseCategory();
+        PreparedStatement preparedStatement = CourseCategory.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setInt(1, id);
+        preparedStatement.setString(2, type);
+        preparedStatement.setInt(3, entryYear);
+        preparedStatement.setString(4, department);
+        preparedStatement.setString(5, program);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            fillDetails(courseCategory, resultSet);
+            courseCategory.setIsSaved(true);
+            return courseCategory;
         }
+        return null;
     }
 
-    public static ArrayList<CourseCategory> retrieveAll() {
-        try {
-            ArrayList<CourseCategory> courseCategories = new ArrayList<>();
-            CourseCategory courseCategory;
-            PreparedStatement preparedStatement = CourseCategory.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                courseCategory = new CourseCategory();
-                fillDetails(courseCategory, resultSet);
-                courseCategory.setIsSaved(true);
-                courseCategories.add(courseCategory);
-            }
-            return courseCategories;
-        } catch (Exception e) {
-            return null;
+    public static ArrayList<CourseCategory> retrieveAll() throws Exception {
+        ArrayList<CourseCategory> courseCategories = new ArrayList<>();
+        CourseCategory courseCategory;
+        PreparedStatement preparedStatement = CourseCategory.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            courseCategory = new CourseCategory();
+            fillDetails(courseCategory, resultSet);
+            courseCategory.setIsSaved(true);
+            courseCategories.add(courseCategory);
         }
+        return courseCategories;
     }
 
     public Properties getProperties() {

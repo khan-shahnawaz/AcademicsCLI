@@ -151,7 +151,7 @@ class PrerequisiteTest {
 
     @Test
     @Order(11)
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedPrerequisite = Prerequisite.retrieve(offering.getId(), "CS101");
         assertEquals(prerequisite.getId(), retrievedPrerequisite.getId());
         assertEquals(prerequisite.getPrerequisiteCode(), retrievedPrerequisite.getPrerequisiteCode());
@@ -163,7 +163,7 @@ class PrerequisiteTest {
 
     @Test
     @Order(12)
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<Prerequisite> prerequisites = Prerequisite.retrieveAll();
         ArrayList<Integer> ids = new ArrayList<>();
         Assertions.assertNotNull(prerequisites);

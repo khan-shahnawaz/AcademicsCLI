@@ -112,7 +112,7 @@ class DefaultPrerequisiteTest {
 
     @Order(10)
     @Test
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedDefaultPrerequisite = DefaultPrerequisite.retrieve("CS101", "CS100");
         assertEquals(defaultPrerequisite.getCatalogCode(), retrievedDefaultPrerequisite.getCatalogCode());
         assertEquals(defaultPrerequisite.getPrerequisiteCode(), retrievedDefaultPrerequisite.getPrerequisiteCode());
@@ -124,7 +124,7 @@ class DefaultPrerequisiteTest {
 
     @Order(11)
     @Test
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<DefaultPrerequisite> defaultPrerequisites = DefaultPrerequisite.retrieveAll();
         Assertions.assertNotNull(defaultPrerequisites);
         ArrayList<String> catalogCodes = new ArrayList<>();

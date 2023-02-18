@@ -170,7 +170,7 @@ class CourseCategoryTest {
 
     @Order(13)
     @Test
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedCourseCategory = CourseCategory.retrieve(courseCategory.getId(),
                 courseCategory.getType(),
                 courseCategory.getEntryYear(),
@@ -188,7 +188,7 @@ class CourseCategoryTest {
 
     @Order(14)
     @Test
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<CourseCategory> courseCategories = CourseCategory.retrieveAll();
         ArrayList<String> programs = new ArrayList<>();
         assertNotNull(courseCategories);

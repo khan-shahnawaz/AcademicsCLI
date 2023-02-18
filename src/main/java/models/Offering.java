@@ -56,42 +56,33 @@ public class Offering extends BaseModel {
         }
     }
 
-    public static Offering retrieve(String code, String semester, int year, int section) {
-        try {
-            Offering offering = new Offering();
-            PreparedStatement preparedStatement = Offering.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setString(1, code);
-            preparedStatement.setString(2, semester);
-            preparedStatement.setInt(3, year);
-            preparedStatement.setInt(4, section);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                Offering.fillDetails(offering, resultSet);
-                offering.setIsSaved(true);
-                return offering;
-            } else {
-                throw new Exception("No Result Found");
-            }
-        } catch (Exception e) {
-            return null;
+    public static Offering retrieve(String code, String semester, int year, int section) throws Exception {
+        Offering offering = new Offering();
+        PreparedStatement preparedStatement = Offering.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setString(1, code);
+        preparedStatement.setString(2, semester);
+        preparedStatement.setInt(3, year);
+        preparedStatement.setInt(4, section);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            Offering.fillDetails(offering, resultSet);
+            offering.setIsSaved(true);
+            return offering;
         }
+        return null;
     }
 
-    public static ArrayList<Offering> retrieveAll() {
-        try {
-            ArrayList<Offering> offerings = new ArrayList<>();
-            PreparedStatement preparedStatement = Offering.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                Offering offering = new Offering();
-                fillDetails(offering, resultSet);
-                offering.setIsSaved(true);
-                offerings.add(offering);
-            }
-            return offerings;
-        } catch (Exception e) {
-            return null;
+    public static ArrayList<Offering> retrieveAll() throws Exception {
+        ArrayList<Offering> offerings = new ArrayList<>();
+        PreparedStatement preparedStatement = Offering.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            Offering offering = new Offering();
+            fillDetails(offering, resultSet);
+            offering.setIsSaved(true);
+            offerings.add(offering);
         }
+        return offerings;
     }
 
     public Properties getProperties() {

@@ -145,7 +145,7 @@ class TeachingTeamTest {
 
     @Order(10)
     @Test
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedTeachingTeam = TeachingTeam.retrieve(teachingTeam.getId(), teachingTeam.getInstructor());
         assertEquals(teachingTeam.getId(), retrievedTeachingTeam.getId());
         assertEquals(teachingTeam.getInstructor(), retrievedTeachingTeam.getInstructor());
@@ -158,7 +158,7 @@ class TeachingTeamTest {
 
     @Order(11)
     @Test
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<TeachingTeam> teachingTeams = TeachingTeam.retrieveAll();
         Assertions.assertNotNull(teachingTeams);
         ArrayList<String> instructors = new ArrayList<>();

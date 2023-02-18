@@ -243,7 +243,7 @@ class StudentTest {
 
     @Test
     @Order(26)
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedStudent = Student.retrieve(student.getEntryNumber());
         assertEquals(student.getEntryNumber(), retrievedStudent.getEntryNumber());
         assertEquals(student.getName(), retrievedStudent.getName());
@@ -263,7 +263,7 @@ class StudentTest {
 
     @Test
     @Order(27)
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<String> entryNumbers = new ArrayList<>();
         ArrayList<Student> students = Student.retrieveAll();
         Assertions.assertNotNull(students);

@@ -43,39 +43,30 @@ public class Curriculum extends BaseModel {
         }
     }
 
-    public static Curriculum retrieve(String program, String courseType) {
-        try {
-            Curriculum curriculum = new Curriculum();
-            PreparedStatement preparedStatement = Curriculum.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setString(1, program);
-            preparedStatement.setString(2, courseType);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(curriculum, resultSet);
-                return curriculum;
-            }
-            return null;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+    public static Curriculum retrieve(String program, String courseType) throws Exception {
+        Curriculum curriculum = new Curriculum();
+        PreparedStatement preparedStatement = Curriculum.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setString(1, program);
+        preparedStatement.setString(2, courseType);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            fillDetails(curriculum, resultSet);
+            return curriculum;
         }
+        return null;
+
     }
 
-    public static ArrayList<Curriculum> retrieveAll() {
-        try {
-            ArrayList<Curriculum> curriculums = new ArrayList<>();
-            PreparedStatement preparedStatement = Curriculum.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                Curriculum curriculum = new Curriculum();
-                fillDetails(curriculum, resultSet);
-                curriculums.add(curriculum);
-            }
-            return curriculums;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+    public static ArrayList<Curriculum> retrieveAll() throws Exception {
+        ArrayList<Curriculum> curriculums = new ArrayList<>();
+        PreparedStatement preparedStatement = Curriculum.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            Curriculum curriculum = new Curriculum();
+            fillDetails(curriculum, resultSet);
+            curriculums.add(curriculum);
         }
+        return curriculums;
     }
 
     public Properties getProperties() {

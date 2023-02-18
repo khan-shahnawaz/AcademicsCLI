@@ -43,41 +43,32 @@ public class Enrollment extends BaseModel {
         enrollment.setCourseType(resultSet.getString("course_type"));
     }
 
-    public static Enrollment retrieve(int id, String entryNo) {
-        try {
-            Enrollment enrollment = new Enrollment();
-            PreparedStatement preparedStatement = Enrollment.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setInt(1, id);
-            preparedStatement.setString(2, entryNo);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(enrollment, resultSet);
-                enrollment.setIsSaved(true);
-                return enrollment;
-            } else {
-                throw new Exception("No rows found");
-            }
-        } catch (Exception e) {
-            return null;
+    public static Enrollment retrieve(int id, String entryNo) throws Exception {
+        Enrollment enrollment = new Enrollment();
+        PreparedStatement preparedStatement = Enrollment.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setInt(1, id);
+        preparedStatement.setString(2, entryNo);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            fillDetails(enrollment, resultSet);
+            enrollment.setIsSaved(true);
+            return enrollment;
         }
+        return null;
     }
 
-    public static ArrayList<Enrollment> retrieveAll() {
-        try {
-            ArrayList<Enrollment> enrollments = new ArrayList<>();
-            Enrollment enrollment;
-            PreparedStatement preparedStatement = Enrollment.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                enrollment = new Enrollment();
-                fillDetails(enrollment, resultSet);
-                enrollment.setIsSaved(true);
-                enrollments.add(enrollment);
-            }
-            return enrollments;
-        } catch (Exception e) {
-            return null;
+    public static ArrayList<Enrollment> retrieveAll() throws Exception {
+        ArrayList<Enrollment> enrollments = new ArrayList<>();
+        Enrollment enrollment;
+        PreparedStatement preparedStatement = Enrollment.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            enrollment = new Enrollment();
+            fillDetails(enrollment, resultSet);
+            enrollment.setIsSaved(true);
+            enrollments.add(enrollment);
         }
+        return enrollments;
     }
 
     public Properties getProperties() {

@@ -56,40 +56,31 @@ public class Student extends BaseModel {
         student.setAdvisor(resultSet.getString("advisor"));
     }
 
-    public static Student retrieve(String entryNumber) {
-        try {
-            Student student = new Student();
-            PreparedStatement preparedStatement = Student.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setString(1, entryNumber);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(student, resultSet);
-                student.setIsSaved(true);
-                return student;
-            } else {
-                throw new Exception("No rows found");
-            }
-        } catch (Exception e) {
-            return null;
+    public static Student retrieve(String entryNumber) throws Exception {
+        Student student = new Student();
+        PreparedStatement preparedStatement = Student.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setString(1, entryNumber);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            fillDetails(student, resultSet);
+            student.setIsSaved(true);
+            return student;
         }
+        return null;
     }
 
-    public static ArrayList<Student> retrieveAll() {
-        try {
-            ArrayList<Student> students = new ArrayList<>();
-            Student student;
-            PreparedStatement preparedStatement = Student.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                student = new Student();
-                fillDetails(student, resultSet);
-                student.setIsSaved(true);
-                students.add(student);
-            }
-            return students;
-        } catch (Exception e) {
-            return null;
+    public static ArrayList<Student> retrieveAll() throws Exception {
+        ArrayList<Student> students = new ArrayList<>();
+        Student student;
+        PreparedStatement preparedStatement = Student.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            student = new Student();
+            fillDetails(student, resultSet);
+            student.setIsSaved(true);
+            students.add(student);
         }
+        return students;
     }
 
     public Properties getProperties() {

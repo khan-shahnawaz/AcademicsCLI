@@ -68,7 +68,7 @@ class DepartmentTest {
 
     @Order(7)
     @Test
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedDepartment = Department.retrieve("CC");
         assertEquals(department.getId(), retrievedDepartment.getId());
         assertEquals(department.getName(), retrievedDepartment.getName());
@@ -79,7 +79,7 @@ class DepartmentTest {
 
     @Order(8)
     @Test
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<Department> departments = Department.retrieveAll();
         Assertions.assertNotNull(departments);
         ArrayList<String> ids = new ArrayList<>();

@@ -128,7 +128,7 @@ class AcademicCalenderTest {
 
     @Order(14)
     @Test
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedAcademicCalender = AcademicCalender.retrieve(2019, "I", "Academic Session");
         assertEquals(academicCalender.getYear(), retrievedAcademicCalender.getYear());
         assertEquals(academicCalender.getSemester(), retrievedAcademicCalender.getSemester());
@@ -142,7 +142,7 @@ class AcademicCalenderTest {
 
     @Order(15)
     @Test
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<AcademicCalender> academicCalenders = AcademicCalender.retrieveAll();
         Assertions.assertNotNull(academicCalenders);
         ArrayList<Integer> years = new ArrayList<>();

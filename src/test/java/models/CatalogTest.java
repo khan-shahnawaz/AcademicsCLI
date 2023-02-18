@@ -198,7 +198,7 @@ class CatalogTest {
 
     @Test
     @Order(22)
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedCatalog = Catalog.retrieve(catalog.getCode());
         assertEquals(catalog.getCode(), retrievedCatalog.getCode());
         assertEquals(catalog.getName(), retrievedCatalog.getName());
@@ -217,7 +217,7 @@ class CatalogTest {
 
     @Test
     @Order(23)
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<String> codes = new ArrayList<>();
         ArrayList<Catalog> catalogs = Catalog.retrieveAll();
 

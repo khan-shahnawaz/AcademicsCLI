@@ -209,7 +209,7 @@ class OfferingTest {
 
     @Order(20)
     @Test
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedoffering = Offering.retrieve("CS100", "I", 2020, 1);
         assertNotNull(retrievedoffering);
         assertEquals("CS100", retrievedoffering.getCode());
@@ -227,7 +227,7 @@ class OfferingTest {
 
     @Order(21)
     @Test
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<Offering> offerings = Offering.retrieveAll();
         ArrayList<Integer> ids = new ArrayList<>();
         assertNotNull(offerings);

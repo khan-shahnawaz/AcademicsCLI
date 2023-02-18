@@ -43,40 +43,30 @@ public class Instructor extends BaseModel {
         instructor.setDepartmentCode(resultSet.getString("department"));
     }
 
-    public static Instructor retrieve(String email) {
-        try {
-            Instructor instructor = new Instructor();
-            PreparedStatement preparedStatement = Instructor.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setString(1, email);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(instructor, resultSet);
-                instructor.setIsSaved(true);
-                return instructor;
-            }
-            return null;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+    public static Instructor retrieve(String email) throws Exception {
+        Instructor instructor = new Instructor();
+        PreparedStatement preparedStatement = Instructor.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setString(1, email);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            fillDetails(instructor, resultSet);
+            instructor.setIsSaved(true);
+            return instructor;
         }
+        return null;
     }
 
-    public static ArrayList<Instructor> retrieveAll() {
-        try {
-            ArrayList<Instructor> instructors = new ArrayList<>();
-            PreparedStatement preparedStatement = Instructor.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                Instructor instructor = new Instructor();
-                fillDetails(instructor, resultSet);
-                instructor.setIsSaved(true);
-                instructors.add(instructor);
-            }
-            return instructors;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+    public static ArrayList<Instructor> retrieveAll() throws Exception {
+        ArrayList<Instructor> instructors = new ArrayList<>();
+        PreparedStatement preparedStatement = Instructor.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            Instructor instructor = new Instructor();
+            fillDetails(instructor, resultSet);
+            instructor.setIsSaved(true);
+            instructors.add(instructor);
         }
+        return instructors;
     }
 
     public Properties getProperties() {

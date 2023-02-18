@@ -1,5 +1,6 @@
 package database.access;
 
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,16 +14,15 @@ import java.util.Properties;
  * @since 2023-02-12
  */
 public class DBConnectionSingleton {
-    final static String PROPERTIES_FILE = "database.properties";
+    final static String PROPERTIES_FILE = "data/database.properties";
     static Properties properties;
     static ClassLoader classLoader;
     private static Connection connection;
 
     static {
         properties = new Properties();
-        classLoader = DBConnectionSingleton.class.getClassLoader();
-        InputStream inputStream = classLoader.getResourceAsStream(PROPERTIES_FILE);
         try {
+            InputStream inputStream = new FileInputStream(PROPERTIES_FILE);
             properties.load(inputStream);
             String driver = properties.getProperty("JDBC_DRIVER");
             String url = properties.getProperty("URL");
@@ -37,5 +37,15 @@ public class DBConnectionSingleton {
 
     public static Connection getConnection() {
         return connection;
+    }
+
+    public static Connection restartConnection() {
+        try {
+            properties.load(new FileInputStream(PROPERTIES_FILE));
+            connection = DriverManager.getConnection(properties.getProperty("URL"), properties.getProperty("USER"), properties.getProperty("PASSWORD"));
+            return connection;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

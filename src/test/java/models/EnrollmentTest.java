@@ -208,7 +208,7 @@ class EnrollmentTest {
 
     @Test
     @Order(14)
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedEnrollment = Enrollment.retrieve(enrollment.getId(), enrollment.getEntryNo());
         assertEquals(enrollment.getId(), retrievedEnrollment.getId());
         assertEquals(enrollment.getEntryNo(), retrievedEnrollment.getEntryNo());
@@ -222,7 +222,7 @@ class EnrollmentTest {
 
     @Test
     @Order(15)
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<Enrollment> enrollments = Enrollment.retrieveAll();
         ArrayList<Integer> ids = new ArrayList<>();
         assertNotNull(enrollments);

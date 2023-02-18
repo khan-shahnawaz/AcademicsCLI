@@ -97,7 +97,7 @@ class CurriculumTest {
 
     @Order(10)
     @Test
-    void retrieve() {
+    void retrieve() throws Exception {
         retrievedCurriculum = Curriculum.retrieve("B.Tech", "PC");
         assertNotNull(retrievedCurriculum);
         assertEquals(curriculum.getProgram(), retrievedCurriculum.getProgram());
@@ -110,7 +110,7 @@ class CurriculumTest {
 
     @Order(11)
     @Test
-    void retrieveAll() {
+    void retrieveAll() throws Exception {
         ArrayList<Curriculum> curriculums = Curriculum.retrieveAll();
         ArrayList<String> programs = new ArrayList<>();
         assertNotNull(curriculums);

@@ -44,41 +44,32 @@ public class AcademicCalender extends BaseModel {
         academicCalender.setEndDate(resultSet.getString("end_date"));
     }
 
-    public static AcademicCalender retrieve(int year, String semester, String event) {
-        try {
-            AcademicCalender academicCalender = new AcademicCalender();
-            PreparedStatement preparedStatement = AcademicCalender.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setInt(1, year);
-            preparedStatement.setString(2, semester);
-            preparedStatement.setString(3, event);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(resultSet, academicCalender);
-                academicCalender.setIsSaved(true);
-                return academicCalender;
-            }
-            return null;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+    public static AcademicCalender retrieve(int year, String semester, String event) throws Exception {
+        AcademicCalender academicCalender = new AcademicCalender();
+        PreparedStatement preparedStatement = AcademicCalender.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setInt(1, year);
+        preparedStatement.setString(2, semester);
+        preparedStatement.setString(3, event);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            fillDetails(resultSet, academicCalender);
+            academicCalender.setIsSaved(true);
+            return academicCalender;
         }
+        return null;
     }
 
-    public static ArrayList<AcademicCalender> retrieveAll() {
-        try {
-            ArrayList<AcademicCalender> academicCalenders = new ArrayList<>();
-            PreparedStatement preparedStatement = AcademicCalender.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                AcademicCalender academicCalender = new AcademicCalender();
-                fillDetails(resultSet, academicCalender);
-                academicCalender.setIsSaved(true);
-                academicCalenders.add(academicCalender);
-            }
-            return academicCalenders;
-        } catch (Exception e) {
-            return null;
+    public static ArrayList<AcademicCalender> retrieveAll() throws Exception {
+        ArrayList<AcademicCalender> academicCalenders = new ArrayList<>();
+        PreparedStatement preparedStatement = AcademicCalender.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            AcademicCalender academicCalender = new AcademicCalender();
+            fillDetails(resultSet, academicCalender);
+            academicCalender.setIsSaved(true);
+            academicCalenders.add(academicCalender);
         }
+        return academicCalenders;
     }
 
     public Properties getProperties() {

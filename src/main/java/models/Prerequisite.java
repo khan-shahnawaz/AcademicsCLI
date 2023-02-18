@@ -39,41 +39,32 @@ public class Prerequisite extends BaseModel {
         prerequisite.setMinGrade(resultSet.getString("min_grade"));
     }
 
-    public static Prerequisite retrieve(int id, String prerequisiteCode) {
-        try {
-            Prerequisite prerequisite = new Prerequisite();
-            PreparedStatement preparedStatement = Prerequisite.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setInt(1, id);
-            preparedStatement.setString(2, prerequisiteCode);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(prerequisite, resultSet);
-                prerequisite.setIsSaved(true);
-                return prerequisite;
-            } else {
-                throw new Exception("No rows found");
-            }
-        } catch (Exception e) {
-            return null;
+    public static Prerequisite retrieve(int id, String prerequisiteCode) throws Exception {
+        Prerequisite prerequisite = new Prerequisite();
+        PreparedStatement preparedStatement = Prerequisite.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setInt(1, id);
+        preparedStatement.setString(2, prerequisiteCode);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            fillDetails(prerequisite, resultSet);
+            prerequisite.setIsSaved(true);
+            return prerequisite;
         }
+        return null;
     }
 
-    public static ArrayList<Prerequisite> retrieveAll() {
-        try {
-            ArrayList<Prerequisite> prerequisites = new ArrayList<>();
-            Prerequisite prerequisite;
-            PreparedStatement preparedStatement = Prerequisite.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                prerequisite = new Prerequisite();
-                fillDetails(prerequisite, resultSet);
-                prerequisite.setIsSaved(true);
-                prerequisites.add(prerequisite);
-            }
-            return prerequisites;
-        } catch (Exception e) {
-            return null;
+    public static ArrayList<Prerequisite> retrieveAll() throws Exception {
+        ArrayList<Prerequisite> prerequisites = new ArrayList<>();
+        Prerequisite prerequisite;
+        PreparedStatement preparedStatement = Prerequisite.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            prerequisite = new Prerequisite();
+            fillDetails(prerequisite, resultSet);
+            prerequisite.setIsSaved(true);
+            prerequisites.add(prerequisite);
         }
+        return prerequisites;
     }
 
     public Properties getProperties() {

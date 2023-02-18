@@ -39,41 +39,33 @@ public class TeachingTeam extends BaseModel {
         teachingTeam.setCoordinator(resultSet.getBoolean("is_coordinator"));
     }
 
-    public static TeachingTeam retrieve(int id, String instructor) {
-        try {
-            TeachingTeam teachingTeam = new TeachingTeam();
-            PreparedStatement preparedStatement = TeachingTeam.connection.prepareStatement(properties.getProperty("select"));
-            preparedStatement.setInt(1, id);
-            preparedStatement.setString(2, instructor);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                fillDetails(teachingTeam, resultSet);
-                teachingTeam.setIsSaved(true);
-                return teachingTeam;
-            } else {
-                throw new Exception("No rows found");
-            }
-        } catch (Exception e) {
-            return null;
+    public static TeachingTeam retrieve(int id, String instructor) throws Exception {
+        TeachingTeam teachingTeam = new TeachingTeam();
+        PreparedStatement preparedStatement = TeachingTeam.connection.prepareStatement(properties.getProperty("select"));
+        preparedStatement.setInt(1, id);
+        preparedStatement.setString(2, instructor);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            fillDetails(teachingTeam, resultSet);
+            teachingTeam.setIsSaved(true);
+            return teachingTeam;
         }
+        return null;
     }
 
-    public static ArrayList<TeachingTeam> retrieveAll() {
-        try {
-            ArrayList<TeachingTeam> teachingTeams = new ArrayList<>();
-            TeachingTeam teachingTeam;
-            PreparedStatement preparedStatement = TeachingTeam.connection.prepareStatement(properties.getProperty("selectAll"));
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                teachingTeam = new TeachingTeam();
-                fillDetails(teachingTeam, resultSet);
-                teachingTeam.setIsSaved(true);
-                teachingTeams.add(teachingTeam);
-            }
-            return teachingTeams;
-        } catch (Exception e) {
-            return null;
+    public static ArrayList<TeachingTeam> retrieveAll() throws Exception {
+        ArrayList<TeachingTeam> teachingTeams = new ArrayList<>();
+        TeachingTeam teachingTeam;
+        PreparedStatement preparedStatement = TeachingTeam.connection.prepareStatement(properties.getProperty("selectAll"));
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            teachingTeam = new TeachingTeam();
+            fillDetails(teachingTeam, resultSet);
+            teachingTeam.setIsSaved(true);
+            teachingTeams.add(teachingTeam);
         }
+        return teachingTeams;
+
     }
 
     public Properties getProperties() {
