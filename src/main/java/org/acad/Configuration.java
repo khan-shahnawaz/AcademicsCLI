@@ -5,9 +5,8 @@ import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Spec;
 
-import java.io.BufferedWriter;
 import java.io.FileInputStream;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.concurrent.Callable;
@@ -22,10 +21,8 @@ import java.util.concurrent.Callable;
 
 @Command(name = "config", mixinStandardHelpOptions = true, description = "Configure the database connection and login credentials.")
 public class Configuration implements Callable<Integer> {
-    private static final String PROPERTIES_FILE = "data/database.properties";
+    private static final String PROPERTIES_FILE = String.join(System.getProperty("file.separator"), System.getProperty("user.home"), ".academic", "database.properties");
     public static int SUCCESS = 0;
-    @Spec
-    CommandSpec spec;
     @Option(names = {"-h", "--host"}, description = "The host name of the database server.")
     private String host;
     @Option(names = {"-p", "--port"}, description = "The port number of the database server.")
@@ -71,8 +68,8 @@ public class Configuration implements Callable<Integer> {
             properties.setProperty("USER", user);
             properties.setProperty("PASSWORD", password);
             properties.setProperty("JDBC_DRIVER", "org.postgresql.Driver");
-            BufferedWriter writer = new BufferedWriter(new FileWriter(PROPERTIES_FILE));
-            properties.store(writer, "Database configuration");
+            properties.store(new FileOutputStream(PROPERTIES_FILE), "Database configuration");
+            System.out.println("Configuration updated successfully.");
             return SUCCESS;
         } catch (Exception e) {
             System.err.println(e.getMessage());

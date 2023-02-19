@@ -51,6 +51,7 @@ public class Curriculum extends BaseModel {
         ResultSet resultSet = preparedStatement.executeQuery();
         if (resultSet.next()) {
             fillDetails(curriculum, resultSet);
+            curriculum.setIsSaved(true);
             return curriculum;
         }
         return null;
@@ -63,6 +64,7 @@ public class Curriculum extends BaseModel {
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
             Curriculum curriculum = new Curriculum();
+            curriculum.setIsSaved(true);
             fillDetails(curriculum, resultSet);
             curriculums.add(curriculum);
         }

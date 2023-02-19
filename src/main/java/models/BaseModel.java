@@ -49,14 +49,10 @@ public abstract class BaseModel implements DAOInterface {
     public String save() {
         if (!this.isSaved) {
             try {
-                int numRowInserted;
                 PreparedStatement preparedStatement = BaseModel.connection.prepareStatement(this.getProperties().getProperty("insert"));
                 putValues(preparedStatement);
-                numRowInserted = preparedStatement.executeUpdate();
+                preparedStatement.executeUpdate();
                 this.updateLastSavedValues();
-                if (numRowInserted == 0) {
-                    throw new SQLException("Insertion failed");
-                }
                 this.isSaved = true;
                 return "00000";
 

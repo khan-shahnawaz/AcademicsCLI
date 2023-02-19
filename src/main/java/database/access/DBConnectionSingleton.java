@@ -1,10 +1,15 @@
 package database.access;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
+
+import static org.acad.Main.checkConfigFile;
 
 /**
  * This class is used to connect to the database.
@@ -14,13 +19,14 @@ import java.util.Properties;
  * @since 2023-02-12
  */
 public class DBConnectionSingleton {
-    final static String PROPERTIES_FILE = "data/database.properties";
+    final static String PROPERTIES_FILE = String.join(System.getProperty("file.separator"), System.getProperty("user.home"), ".academic", "database.properties");
     static Properties properties;
-    static ClassLoader classLoader;
     private static Connection connection;
 
     static {
+        checkConfigFile();
         properties = new Properties();
+        System.out.println(PROPERTIES_FILE);
         try {
             InputStream inputStream = new FileInputStream(PROPERTIES_FILE);
             properties.load(inputStream);
@@ -30,8 +36,8 @@ public class DBConnectionSingleton {
             String password = properties.getProperty("PASSWORD");
             Class.forName(driver);
             connection = DriverManager.getConnection(url, username, password);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException | IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -44,8 +50,10 @@ public class DBConnectionSingleton {
             properties.load(new FileInputStream(PROPERTIES_FILE));
             connection = DriverManager.getConnection(properties.getProperty("URL"), properties.getProperty("USER"), properties.getProperty("PASSWORD"));
             return connection;
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             return null;
+        } catch (SQLException | IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

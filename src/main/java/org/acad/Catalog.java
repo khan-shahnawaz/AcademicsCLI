@@ -5,6 +5,7 @@ import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Spec;
 import subcommands.catalog.Add;
+import subcommands.catalog.Prerequisite;
 import subcommands.catalog.Remove;
 import subcommands.catalog.Update;
 
@@ -12,6 +13,9 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
+
+import static database.access.Exception.*;
+
 
 /**
  * Class to deal with subcommand catalog.
@@ -21,15 +25,8 @@ import java.util.concurrent.Callable;
  * @since 2023-02-17
  */
 @Command(name = "catalog", mixinStandardHelpOptions = true, version = "catalog 0.1",
-        description = "Contains the functionality for displaying and changing the course catalog.", subcommands = {Add.class, Remove.class, Update.class})
+        description = "Contains the functionality for displaying and changing the course catalog.", subcommands = {Add.class, Remove.class, Update.class, Prerequisite.class})
 public class Catalog implements Callable<Integer> {
-    public static int SUCCESS = 0;
-    public static int ALREADY_EXISTS = 1;
-    public static int UNAUTHORISED = 2;
-    public static int UNKNOWN = 3;
-    public static int NOT_EXISTS = 4;
-    @Spec
-    CommandSpec spec;
     @Option(names = {"-l", "--list"}, description = "List all courses in the catalog.")
     private boolean list;
     @Option(names = {"-d", "--display"}, description = "Display a course in the catalog.")
@@ -59,13 +56,7 @@ public class Catalog implements Callable<Integer> {
                 }
                 return SUCCESS;
             } catch (SQLException e) {
-                if (e.getSQLState().equalsIgnoreCase("42501")) {
-                    System.err.println("You do not have the required permissions to view the catalog.");
-                    return UNAUTHORISED;
-                }
-                e.printStackTrace();
-                System.err.println("An error occurred while retrieving the catalog.");
-                return UNKNOWN;
+                return handleSQLException(e.getSQLState(), e.getMessage());
             } catch (Exception e) {
                 e.printStackTrace();
                 System.err.println("An error occurred while retrieving the catalog.");
@@ -99,13 +90,7 @@ public class Catalog implements Callable<Integer> {
                 }
                 return SUCCESS;
             } catch (SQLException e) {
-                if (e.getSQLState().equalsIgnoreCase("42501")) {
-                    System.err.println("You do not have the required permissions to view the catalog.");
-                    return UNAUTHORISED;
-                }
-                e.printStackTrace();
-                System.err.println("An error occurred while retrieving the catalog.");
-                return UNKNOWN;
+                return handleSQLException(e.getSQLState(), e.getMessage());
             } catch (Exception e) {
                 e.printStackTrace();
                 System.err.println("An error occurred while retrieving the catalog.");

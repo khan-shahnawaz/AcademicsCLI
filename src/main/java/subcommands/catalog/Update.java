@@ -5,14 +5,11 @@ import picocli.CommandLine;
 import java.sql.SQLException;
 import java.util.concurrent.Callable;
 
+import static database.access.Exception.*;
+
 @CommandLine.Command(name = "update", mixinStandardHelpOptions = true, version = "update 0.1",
         description = "Update a course in the catalog.")
 public class Update implements Callable<Integer> {
-    public static int SUCCESS = 0;
-    public static int ALREADY_EXISTS = 1;
-    public static int UNAUTHORISED = 2;
-    public static int UNKNOWN = 3;
-    public static int NOT_EXISTS = 4;
     @CommandLine.Spec
     CommandLine.Model.CommandSpec spec;
     @CommandLine.Option(names = {"-C", "--code"}, description = "Code of the course.", interactive = true, required = true, arity = "0..1", echo = true, prompt = "Course Code: ")
@@ -62,12 +59,7 @@ public class Update implements Callable<Integer> {
             System.out.println("Course updated successfully.");
             return SUCCESS;
         } catch (SQLException e) {
-            if (e.getSQLState().equalsIgnoreCase("42501")) {
-                System.err.println("You do not have the required permissions to update a course in the catalog.");
-                return UNAUTHORISED;
-            }
-            System.err.println("An error occurred while updating the course in the catalog.");
-            return UNKNOWN;
+            return database.access.Exception.handleSQLException(e.getSQLState(), e.getMessage());
         } catch (Exception e) {
             System.err.println("An error occurred while updating the course in the catalog.");
             return UNKNOWN;

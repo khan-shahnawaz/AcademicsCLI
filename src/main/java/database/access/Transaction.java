@@ -1,6 +1,7 @@
 package database.access;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class Transaction {
     static Connection connection;
@@ -13,7 +14,7 @@ public class Transaction {
         try {
             connection.setAutoCommit(false);
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             return false;
         }
     }
@@ -23,7 +24,7 @@ public class Transaction {
             connection.commit();
             connection.setAutoCommit(true);
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             return false;
         }
     }
@@ -33,7 +34,7 @@ public class Transaction {
             connection.rollback();
             connection.setAutoCommit(true);
             return true;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             return false;
         }
     }

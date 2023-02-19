@@ -3,17 +3,14 @@ package subcommands.catalog;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-
+import static database.access.Exception.*;
 import java.util.concurrent.Callable;
+
+import static database.access.Exception.handleSQLException;
 
 @Command(name = "add", mixinStandardHelpOptions = true, version = "catalog 0.1",
         description = "Adds a course to the catalog.")
 public class Add implements Callable<Integer> {
-    public static int SUCCESS = 0;
-    public static int ALREADY_EXISTS = 1;
-    public static int UNAUTHORISED = 2;
-    public static int UNKNOWN = 3;
-    public static int NOT_EXISTS = 4;
     @CommandLine.Spec
     CommandLine.Model.CommandSpec spec;
     @Option(names = {"-C", "--code"}, description = "Code of the course.", interactive = true, required = true, arity = "0..1", echo = true, prompt = "Course Code: ")
@@ -28,7 +25,7 @@ public class Add implements Callable<Integer> {
     private String courseStructure;
 
     @Override
-    public Integer call() throws Exception {
+    public Integer call() {
         models.Catalog catalog = new models.Catalog();
         catalog.setCode(courseCode);
         catalog.setName(courseName);
@@ -50,17 +47,9 @@ public class Add implements Callable<Integer> {
         catalog.setC(C);
         catalog.setCode(courseCode);
         String exitCode = catalog.save().toLowerCase();
-        if (exitCode.equals("23505")) {
-            System.err.println("Course already exists in the catalog");
-            return ALREADY_EXISTS;
-        }
-        if (exitCode.equals("42501")) {
-            System.err.println("You do not have the required permissions to add a course to the catalog.");
-            return UNAUTHORISED;
-        }
         if (!exitCode.equals("00000")) {
             System.err.println("An error occurred while adding the course to the catalog.");
-            return UNKNOWN;
+            return handleSQLException(exitCode, "Insertion failed.");
         }
         System.out.print("Course added successfully.");
         return SUCCESS;
