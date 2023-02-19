@@ -58,6 +58,7 @@ public abstract class BaseModel implements DAOInterface {
 
             } catch (SQLException e) {
                 e.printStackTrace();
+                System.out.println(e.getSQLState());
                 return e.getSQLState();
             } catch (Exception e) {
                 throw new RuntimeException(e);
