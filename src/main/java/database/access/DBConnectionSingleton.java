@@ -21,6 +21,7 @@ import static org.acad.Main.checkConfigFile;
 public class DBConnectionSingleton {
     final static String PROPERTIES_FILE = String.join(System.getProperty("file.separator"), System.getProperty("user.home"), ".academic", "database.properties");
     static Properties properties;
+    static String userName;
     private static Connection connection;
 
     static {
@@ -35,6 +36,7 @@ public class DBConnectionSingleton {
             String password = properties.getProperty("PASSWORD");
             Class.forName(driver);
             connection = DriverManager.getConnection(url, username, password);
+            userName = username;
         } catch (SQLException | IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -54,5 +56,9 @@ public class DBConnectionSingleton {
         } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static String getUserName() {
+        return userName;
     }
 }

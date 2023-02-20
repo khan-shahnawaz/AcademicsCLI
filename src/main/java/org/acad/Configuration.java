@@ -1,5 +1,6 @@
 package org.acad;
 
+import database.access.DBConnectionSingleton;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
@@ -68,8 +69,11 @@ public class Configuration implements Callable<Integer> {
             properties.setProperty("JDBC_DRIVER", "org.postgresql.Driver");
             properties.store(new FileOutputStream(PROPERTIES_FILE), "Database configuration");
             System.out.println("Configuration updated successfully.");
+            DBConnectionSingleton.restartConnection();
+            System.out.println("Login successful!");
             return SUCCESS;
         } catch (Exception e) {
+            System.err.println("Invalid Credentials or Database not found.");
             System.err.println(e.getMessage());
             return 1;
         }
