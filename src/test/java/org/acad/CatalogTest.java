@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import picocli.CommandLine;
 
-import java.io.IOException;
-
 import static database.access.Exception.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

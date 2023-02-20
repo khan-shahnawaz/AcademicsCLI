@@ -1,9 +1,7 @@
 package org.acad;
 
 import picocli.CommandLine.Command;
-import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Option;
-import picocli.CommandLine.Spec;
 import subcommands.calender.Add;
 import subcommands.calender.Remove;
 

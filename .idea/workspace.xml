@@ -9,16 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Completed subcommands for department">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acad/Instructor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/subcommands/instructors/Add.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/subcommands/instructors/Remove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/acad/InstructorTest.java" afterDir="false" />
+    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Completed subcommand for instructors">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acad/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/subcommands/students/Add.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/subcommands/students/Remove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/acad/StudentTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/BaseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/access/DBConnectionSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/access/DBConnectionSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/departments/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/departments/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/instructors/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/instructors/Add.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +143,7 @@
       <recent name="Models" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'AcademicsCLI.test'">
+  <component name="RunManager" selected="Gradle.AcademicsCLI [shadowJar]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.acad.Main" />
       <module name="AcademicsCLI.main" />
@@ -224,28 +223,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'AcademicsCLI.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="Tests in 'Models'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="StudentTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -258,7 +236,28 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;Models.*&quot;" />
+            <option value="&quot;models.StudentTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'AcademicsCLI.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -309,21 +308,21 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.AcademicsCLI [:Main.main()]" />
+      <item itemvalue="Gradle.StudentTest" />
       <item itemvalue="Gradle.AcademicsCLI [shadowJar]" />
       <item itemvalue="Gradle.CatalogTest" />
       <item itemvalue="Gradle.Tests in 'AcademicsCLI.test'" />
-      <item itemvalue="Gradle.Tests in 'Models'" />
       <item itemvalue="JAR Application.CLI" />
       <item itemvalue="JUnit.Unit Tests" />
       <item itemvalue="Shell Script.Unnamed" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests in 'AcademicsCLI.test'" />
         <item itemvalue="Gradle.AcademicsCLI [shadowJar]" />
+        <item itemvalue="Gradle.Tests in 'AcademicsCLI.test'" />
+        <item itemvalue="Gradle.StudentTest" />
         <item itemvalue="Gradle.CatalogTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.Tests in 'Models'" />
       </list>
     </recent_temporary>
   </component>
@@ -344,7 +343,7 @@
       <workItem from="1676650847958" duration="41143000" />
       <workItem from="1676725479836" duration="28077000" />
       <workItem from="1676788140827" duration="21064000" />
-      <workItem from="1676845293292" duration="9407000" />
+      <workItem from="1676845293292" duration="20124000" />
     </task>
     <task id="LOCAL-00001" summary="Added class for database connection">
       <created>1676203690303</created>
@@ -409,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676809999885</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Completed subcommand for instructors">
+      <created>1676875438800</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676875438801</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +474,8 @@
     <MESSAGE value="Completed subcommands for catalog and config" />
     <MESSAGE value="Completed subcommands for calendar and Curriculum" />
     <MESSAGE value="Completed subcommands for department" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed subcommands for department" />
+    <MESSAGE value="Completed subcommand for instructors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed subcommand for instructors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -485,7 +492,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1676845086575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1676893256914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$CatalogTest.ic" NAME="CatalogTest Coverage Results" MODIFIED="1676740492223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$.ic" NAME=" Coverage Results" MODIFIED="1676786889272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>

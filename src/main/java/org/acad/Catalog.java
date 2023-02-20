@@ -1,9 +1,7 @@
 package org.acad;
 
 import picocli.CommandLine.Command;
-import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Option;
-import picocli.CommandLine.Spec;
 import subcommands.catalog.Add;
 import subcommands.catalog.Prerequisite;
 import subcommands.catalog.Remove;

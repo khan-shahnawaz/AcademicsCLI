@@ -1,6 +1,6 @@
 package subcommands.departments;
+
 import models.Department;
-import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 

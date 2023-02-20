@@ -8,15 +8,12 @@ import picocli.CommandLine;
 
 import static database.access.Exception.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import com.opencsv.CSVReaderHeaderAware;
-
-import java.io.FileReader;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class InstructorTest {
     @Order(1)
     @Test
-    void addInstructor() throws Exception {
+    void addInstructor() {
         int exitCode = new CommandLine(new Department()).execute("add", "-n", "Computer Science", "-c", "CS");
         assertEquals(SUCCESS, exitCode);
         exitCode = new CommandLine(new Instructor()).execute("--list");
@@ -31,14 +28,14 @@ class InstructorTest {
 
     @Order(2)
     @Test
-    void listInstructor() throws Exception {
+    void listInstructor() {
         int exitCode = new CommandLine(new Instructor()).execute("--list");
         assertEquals(SUCCESS, exitCode);
     }
 
     @Order(3)
     @Test
-void removeInstructor() throws Exception {
+    void removeInstructor() {
         int exitCode = new CommandLine(new Instructor()).execute("remove", "-e", "email");
         assertEquals(SUCCESS, exitCode);
         exitCode = new CommandLine(new Instructor()).execute("remove", "-e", "email");

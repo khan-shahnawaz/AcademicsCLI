@@ -1,13 +1,14 @@
 package org.acad;
+
 import picocli.CommandLine.Command;
-import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Option;
-import picocli.CommandLine.Spec;
-import java.io.FileInputStream;
+import subcommands.departments.Add;
+import subcommands.departments.Remove;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
-import subcommands.departments.*;
+
 import static database.access.Exception.*;
 
 @Command(name = "department", mixinStandardHelpOptions = true, version = "department 0.1",

@@ -3,9 +3,10 @@ package subcommands.catalog;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-import static database.access.Exception.*;
+
 import java.util.concurrent.Callable;
 
+import static database.access.Exception.SUCCESS;
 import static database.access.Exception.handleSQLException;
 
 @Command(name = "add", mixinStandardHelpOptions = true, version = "catalog 0.1",

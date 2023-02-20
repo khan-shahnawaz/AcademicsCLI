@@ -1,4 +1,4 @@
-package subcommands.instructors;
+package subcommands.students;
 
 import com.opencsv.CSVReaderHeaderAware;
 import database.access.DBConnectionSingleton;
@@ -13,30 +13,30 @@ import java.util.concurrent.Callable;
 import static database.access.Exception.*;
 
 @Command(name = "remove", mixinStandardHelpOptions = true, version = "add 0.1",
-        description = "Remove instructor from the database.")
+        description = "Remove student from the database.")
 public class Remove implements Callable<Integer> {
     Connection connection = DBConnectionSingleton.getConnection();
-    @Option(names = {"-F", "--file"}, description = "CSV file containing instructor details.(Name,Department,Address,Phone,Email,Password)", defaultValue = "", interactive = true, echo = true, prompt = "CSV file Location: ", arity = "0..1")
+    @Option(names = {"-F", "--file"}, description = "CSV file containing student details.(Entry Number,Name,Department,Address,Phone,Email,Password,Advisor,Credit Limit, Program, Entry Year)", defaultValue = "", interactive = true, echo = true, prompt = "CSV file Location: ", arity = "0..1")
     private String file;
-    @Option(names = {"-e", "--email"}, description = "Email of the instructor.", defaultValue = "", interactive = true, echo = true, prompt = "Email: ", arity = "0..1")
-    private String email;
+    @Option(names = {"-e", "--entry"}, description = "Entry of the student.", defaultValue = "", interactive = true, echo = true, prompt = "Entry Number: ", arity = "0..1")
+    private String entry;
 
-    private Integer removeInstructor() throws Exception {
-        models.Instructor instructor = models.Instructor.retrieve(email);
-        if (instructor == null) {
-            System.err.println("Instructor not found.");
+    private Integer removeStudent() throws Exception {
+        models.Student student = models.Student.retrieve(entry);
+        if (student == null) {
+            System.out.println("Student not found.");
             return NOT_EXISTS;
         }
-        String exitCode = instructor.delete().toLowerCase();
+        String exitCode = student.delete().toLowerCase();
         if (!exitCode.equals("00000")) {
             Transaction.rollback();
-            System.err.println("An error occurred while removing the instructor from the database.");
+            System.err.println("An error occurred while removing the student from the database.");
             return handleSQLException(exitCode, "Deletion failed.");
         }
         Statement statement = connection.createStatement();
-        String sql = String.format("DROP USER \"%s\"", email);
+        String sql = String.format("DROP USER \"%s\"", entry);
         statement.execute(sql);
-        System.out.println("Instructor removed successfully.");
+        System.out.println("Student removed successfully.");
         return SUCCESS;
     }
 
@@ -45,7 +45,7 @@ public class Remove implements Callable<Integer> {
         try {
             if (file.equals("")) {
                 Transaction.start();
-                int exitCode = removeInstructor();
+                int exitCode = removeStudent();
                 if (exitCode == SUCCESS) {
                     Transaction.commit();
                 } else {
@@ -57,9 +57,10 @@ public class Remove implements Callable<Integer> {
             CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new java.io.FileReader(file));
             java.util.Map<String, String> record;
             while ((record = reader.readMap()) != null) {
-                email = record.get("Email");
-                Integer exitCode = removeInstructor();
+                entry = record.get("Entry Number");
+                int exitCode = removeStudent();
                 if (exitCode != SUCCESS) {
+                    Transaction.rollback();
                     return exitCode;
                 }
             }

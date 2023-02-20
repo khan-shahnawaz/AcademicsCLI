@@ -26,7 +26,6 @@ public class DBConnectionSingleton {
     static {
         checkConfigFile();
         properties = new Properties();
-        System.out.println(PROPERTIES_FILE);
         try {
             InputStream inputStream = new FileInputStream(PROPERTIES_FILE);
             properties.load(inputStream);
