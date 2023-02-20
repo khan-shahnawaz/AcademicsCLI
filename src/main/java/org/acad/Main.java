@@ -10,7 +10,9 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.concurrent.Callable;
 
-@Command(name = "acad", mixinStandardHelpOptions = true, subcommands = {Catalog.class, Configuration.class, Calender.class, Curriculum.class, Department.class}, version = "acad 0.1",
+@Command(name = "acad", mixinStandardHelpOptions = true, subcommands = {
+        Catalog.class, Configuration.class, Calender.class, Curriculum.class, Department.class,
+        Instructor.class}, version = "acad 0.1",
         description = "A command line interface for the Academic database.")
 public class Main implements Callable<Integer> {
     public static void checkConfigFile() {

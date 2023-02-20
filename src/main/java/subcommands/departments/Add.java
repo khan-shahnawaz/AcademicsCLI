@@ -4,7 +4,7 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import java.util.concurrent.Callable;
 import static database.access.Exception.SUCCESS;
-import static database.access.Exception.handleSQLException;
+import static database.access.Exception.*;
 
 @Command(name = "add", mixinStandardHelpOptions = true, version = "departments 0.1",
         description = "Adds a department to the database.")

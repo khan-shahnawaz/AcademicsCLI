@@ -18,8 +18,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation 'info.picocli:picocli:4.7.1'
     annotationProcessor 'info.picocli:picocli-codegen:4.7.1'
-    implementation 'jakarta.validation:jakarta.validation-api:3.0.0'
-    implementation 'org.glassfish:javax.el:3.0.0'
+    implementation 'com.opencsv:opencsv:5.5.2'
 }
 
 test {
