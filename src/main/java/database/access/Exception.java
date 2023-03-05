@@ -29,7 +29,7 @@ public class Exception extends Throwable {
     99907: Not allowed to enroll(prereq)
          */
 
-        if (sqlState.equalsIgnoreCase("23514")) {
+        if (sqlState.equalsIgnoreCase("42501")) {
             System.err.println("You do not have permission to perform this action.");
             return UNAUTHORISED;
         }
@@ -50,11 +50,11 @@ public class Exception extends Throwable {
             return INVALID_VALUES;
         }
         if (sqlState.equalsIgnoreCase("99901")) {
-            System.err.println("The operation was not performed because the calender for the academic session does not exits.");
+            System.err.println("The operation was not performed because the calender for the academic session does not exits for this event.");
             return INVALID_SESSION;
         }
         if (sqlState.equalsIgnoreCase("99902")) {
-            System.err.println("The operation was not performed because it is not open in the calender.");
+            System.err.println("The operation was not performed because the event is not open in the calender.");
             return NOT_OPEN;
         }
         if (sqlState.equalsIgnoreCase("99903")) {
@@ -74,7 +74,7 @@ public class Exception extends Throwable {
             return CREDIT_LIMIT_EXCEEDED;
         }
         if (sqlState.equalsIgnoreCase("99907")) {
-            System.err.println("The operation was not performed because the student has not obtained the required grade in one of the prerequisite.");
+            System.err.println("The operation was not performed because the student has not obtained the required grade in one of the prerequisite or CGPA criteria not satisfied.");
             return PREREQ_FAILED;
         }
 

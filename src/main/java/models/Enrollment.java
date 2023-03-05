@@ -48,6 +48,7 @@ public class Enrollment extends BaseModel {
         PreparedStatement preparedStatement = Enrollment.connection.prepareStatement(properties.getProperty("select"));
         preparedStatement.setInt(1, id);
         preparedStatement.setString(2, entryNo);
+        System.out.println(preparedStatement.toString());
         ResultSet resultSet = preparedStatement.executeQuery();
         if (resultSet.next()) {
             fillDetails(enrollment, resultSet);

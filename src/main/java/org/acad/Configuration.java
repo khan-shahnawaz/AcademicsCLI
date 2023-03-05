@@ -30,7 +30,7 @@ public class Configuration implements Callable<Integer> {
     private String database;
     @Option(names = {"-u", "--user"}, description = "The username to connect to the database.")
     private String user;
-    @Option(names = {"-w", "--password"}, description = "The password to connect to the database.", interactive = true, prompt = "Password: ")
+    @Option(names = {"-w", "--password"}, description = "The password to connect to the database.", interactive = true, prompt = "Password: ", arity = "0..1")
     private String password;
 
     public Integer call() {
@@ -70,6 +70,9 @@ public class Configuration implements Callable<Integer> {
             properties.store(new FileOutputStream(PROPERTIES_FILE), "Database configuration");
             System.out.println("Configuration updated successfully.");
             DBConnectionSingleton.restartConnection();
+            if (DBConnectionSingleton.getConnection() == null) {
+                return 1;
+            }
             System.out.println("Login successful!");
             return SUCCESS;
         } catch (Exception e) {

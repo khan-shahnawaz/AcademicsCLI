@@ -14,9 +14,7 @@ class ConfigurationTest {
         InputStream in = new ByteArrayInputStream("4321\n".getBytes());
         System.setIn(in);
         int exitCode = new CommandLine(new Configuration()).execute("-d", "acad", "-u", "post", "-w");
-        assertEquals(0, exitCode);
-        exitCode = new CommandLine(new Configuration()).execute();
-        assertEquals(0, exitCode);
+        assertEquals(1, exitCode);
         in = new ByteArrayInputStream("1234\n".getBytes());
         System.setIn(in);
         exitCode = new CommandLine(new Configuration()).execute("-d", "academics", "-h", "localhost", "-w", "-p", "5432", "-u", "postgres");

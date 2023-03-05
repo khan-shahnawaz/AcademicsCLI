@@ -9,20 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Completed subcommand for student">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acad/Enrollment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acad/Offering.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Add.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Prerequisite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Update.java" afterDir="false" />
+    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Completed subcommands for Enrollement and Offerings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/access/DBConnectionSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/access/DBConnectionSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/access/Exception.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/access/Exception.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Offering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Offering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/BaseModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Enrollment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Enrollment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Offering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Offering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/calender/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/calender/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/ConfigurationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/ConfigurationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +118,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
@@ -148,7 +148,7 @@
       <recent name="Models" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'AcademicsCLI.test'">
+  <component name="RunManager" selected="Gradle.AcademicsCLI [shadowJar]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.acad.Main" />
       <module name="AcademicsCLI.main" />
@@ -323,8 +323,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests in 'AcademicsCLI.test'" />
         <item itemvalue="Gradle.AcademicsCLI [shadowJar]" />
+        <item itemvalue="Gradle.Tests in 'AcademicsCLI.test'" />
         <item itemvalue="Gradle.StudentTest" />
         <item itemvalue="Gradle.CatalogTest" />
         <item itemvalue="Application.Main" />
@@ -348,7 +348,9 @@
       <workItem from="1676650847958" duration="41143000" />
       <workItem from="1676725479836" duration="28077000" />
       <workItem from="1676788140827" duration="21064000" />
-      <workItem from="1676845293292" duration="40641000" />
+      <workItem from="1676845293292" duration="55242000" />
+      <workItem from="1677857179627" duration="7036000" />
+      <workItem from="1677943948841" duration="9058000" />
     </task>
     <task id="LOCAL-00001" summary="Added class for database connection">
       <created>1676203690303</created>
@@ -427,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676896188432</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Completed subcommands for Enrollement and Offerings">
+      <created>1676925657919</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676925657920</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +497,8 @@
     <MESSAGE value="Completed subcommands for department" />
     <MESSAGE value="Completed subcommand for instructors" />
     <MESSAGE value="Completed subcommand for student" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed subcommand for student" />
+    <MESSAGE value="Completed subcommands for Enrollement and Offerings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed subcommands for Enrollement and Offerings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -505,8 +515,10 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1676895822635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AcademicsCLI$AcademicsCLI__shadowJar_.ic" NAME="AcademicsCLI [shadowJar] Coverage Results" MODIFIED="1677857835133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1677934136313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$CatalogTest.ic" NAME="CatalogTest Coverage Results" MODIFIED="1676740492223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AcademicsCLI$AcademicsCLI___Main_main___.ic" NAME="AcademicsCLI [:Main.main()] Coverage Results" MODIFIED="1676958739802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$.ic" NAME=" Coverage Results" MODIFIED="1676786889272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

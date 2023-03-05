@@ -38,6 +38,7 @@ public class DBConnectionSingleton {
             connection = DriverManager.getConnection(url, username, password);
             userName = username;
         } catch (SQLException | IOException | ClassNotFoundException e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
     }
@@ -51,10 +52,9 @@ public class DBConnectionSingleton {
             properties.load(new FileInputStream(PROPERTIES_FILE));
             connection = DriverManager.getConnection(properties.getProperty("URL"), properties.getProperty("USER"), properties.getProperty("PASSWORD"));
             return connection;
-        } catch (FileNotFoundException e) {
-            return null;
         } catch (SQLException | IOException e) {
-            throw new RuntimeException(e);
+            connection = null;
+            return null;
         }
     }
 

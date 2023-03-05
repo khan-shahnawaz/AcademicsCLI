@@ -14,7 +14,7 @@ public class Update implements Callable<Integer> {
     int offeringId;
     @CommandLine.Option(names = {"-g", "--CGPA"}, description = "Minimum CGPA", paramLabel = "CGPA", descriptionKey = "CGPA", defaultValue = "-1")
     float minCGPA;
-    @CommandLine.Option(names = {"-s", "--status"}, description = "Offering Status", paramLabel = "status", descriptionKey = "status", interactive = true, echo = true, prompt = "Current Status: ", defaultValue = "")
+    @CommandLine.Option(names = {"-s", "--status"}, description = "Offering Status", paramLabel = "status", descriptionKey = "status", interactive = true, echo = true, prompt = "Current Status: ", defaultValue = "", arity = "0..1")
     String status;
 
     @Override

@@ -51,12 +51,15 @@ public abstract class BaseModel implements DAOInterface {
             try {
                 PreparedStatement preparedStatement = BaseModel.connection.prepareStatement(this.getProperties().getProperty("insert"));
                 putValues(preparedStatement);
+                System.out.println(preparedStatement.toString());
                 preparedStatement.executeUpdate();
                 this.updateLastSavedValues();
                 this.isSaved = true;
                 return "00000";
 
             } catch (SQLException e) {
+                System.out.println(e.getSQLState());
+                e.printStackTrace();
                 return e.getSQLState();
             } catch (Exception e) {
                 throw new RuntimeException(e);

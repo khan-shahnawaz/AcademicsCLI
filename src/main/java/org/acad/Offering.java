@@ -109,13 +109,13 @@ public class Offering implements Callable<Integer> {
                 String header10 = "L-T-P-S-C Structure";
                 int columnWidth10 = Math.max(
                         header10.length() + 2,
-                        catalogs.stream().mapToInt(o -> (o.getL() + "-" + o.getT() + "-" + o.getP() + "-" + o.getS() + "-" + o.getC()).length() + 2).max().orElse(header10.length() + 2)
+                        catalogs.stream().mapToInt(o -> (o.getL() + "-" + o.getT() + "-" + o.getP() + "-" + o.getS() + "-" + o.getC()).length() + 7).max().orElse(header10.length() + 2)
                 );
                 String header = String.format("%-" + columnWidth1 + "s", header1) + String.format("%-" + columnWidth2 + "s", header2) + String.format("%-" + columnWidth3 + "s", header3) + String.format("%-" + columnWidth4 + "s", header4) + String.format("%-" + columnWidth5 + "s", header5) + String.format("%-" + columnWidth6 + "s", header6) + String.format("%-" + columnWidth7 + "s", header7) + String.format("%-" + columnWidth8 + "s", header8) + String.format("%-" + columnWidth9 + "s", header9) + String.format("%-" + columnWidth10 + "s", header10);
                 System.out.println(header);
                 for (models.Offering offering : offerings) {
                     models.Catalog catalog = models.Catalog.retrieve(offering.getCode());
-                    String row = String.format("%-" + columnWidth1 + "s", offering.getId()) + String.format("%-" + columnWidth2 + "s", offering.getCode()) + String.format("%-" + columnWidth3 + "s", catalog.getName()) + String.format("%-" + columnWidth4 + "s", offering.getDepartment()) + String.format("%-" + columnWidth5 + "s", offering.getYear() + "-" + offering.getSemester()) + String.format("%-" + columnWidth6 + "s", offering.getSection()) + String.format("%-" + columnWidth7 + "s", offering.getCoordinator()) + String.format("%-" + columnWidth8 + "s", offering.getStatus()) + String.format("%-" + columnWidth9 + "s", offering.getMinCGPA()) + String.format("%-" + columnWidth10 + "s", catalog.getL() + "-" + catalog.getT() + "-" + catalog.getP() + "-" + catalog.getS() + "-" + catalog.getC());
+                    String row = String.format("%-" + columnWidth1 + "s", offering.getId()) + String.format("%-" + columnWidth2 + "s", offering.getCode()) + String.format("%-" + columnWidth3 + "s", catalog.getName()) + String.format("%-" + columnWidth4 + "s", offering.getDepartment()) + String.format("%-" + columnWidth5 + "s", offering.getYear() + "-" + offering.getSemester()) + String.format("%-" + columnWidth6 + "s", offering.getSection()) + String.format("%-" + columnWidth7 + "s", offering.getCoordinator()) + String.format("%-" + columnWidth8 + "s", offering.getStatus()) + String.format("%-" + columnWidth9 + "s", offering.getMinCGPA()) + String.format("%-" + columnWidth10 + "s", catalog.getL() + " - " + catalog.getT() + " - " + catalog.getP() + " - " + catalog.getS() + " - " + catalog.getC());
                     System.out.println(row);
                 }
                 return SUCCESS;

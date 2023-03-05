@@ -20,9 +20,9 @@ public class Add implements Callable<Integer> {
     private int section;
     @CommandLine.Option(names = {"-g", "--CGPA"}, description = "CGPA Cuttoff", required = true, interactive = true, arity = "0..1", echo = true, prompt = "CGPA Cuttoff: ")
     private float cgpaCutoff;
-    @CommandLine.Option(names = {"-i", "--instructor"}, description = "Instructor", required = true, interactive = true, arity = "0..1", echo = true, prompt = "Coordinator Email(Leave Blank to set your own): ", defaultValue = "")
+    @CommandLine.Option(names = {"-i", "--instructor"}, description = "Instructor", interactive = true, arity = "0..1", echo = true, prompt = "Coordinator Email(Leave Blank to set your own): ", defaultValue = "")
     private String instructor;
-    @CommandLine.Option(names = {"-d", "--department"}, description = "Department", required = true, interactive = true, arity = "0..1", echo = true, prompt = "Department(leave blank to set your own): ", defaultValue = "")
+    @CommandLine.Option(names = {"-d", "--department"}, description = "Department", interactive = true, arity = "0..1", echo = true, prompt = "Department(leave blank to set your own): ", defaultValue = "")
     private String department;
 
     @Override
@@ -39,22 +39,18 @@ public class Add implements Callable<Integer> {
             offering.setMinCGPA(cgpaCutoff);
             offering.setStatus("Proposed");
             if (instructor.equals("")) {
-                String instructorEmail = getUserName();
-                models.Instructor instructorObj = models.Instructor.retrieve(instructorEmail);
-                if (instructorObj == null) {
-                    System.out.println("You are not an instructor. Please enter the instructor's email.");
-                    return UNKNOWN;
-                }
-                offering.setCoordinator(instructorObj.getEmail());
-                offering.setDepartment(instructorObj.getDepartmentCode());
-            } else {
-                offering.setCoordinator(instructor);
-                if (department.equals("")) {
-                    offering.setDepartment(models.Instructor.retrieve(instructor).getDepartmentCode());
-                } else {
-                    offering.setDepartment(department);
-                }
+                instructor = getUserName();
             }
+            models.Instructor instructorObject = models.Instructor.retrieve(instructor);
+            if (instructorObject == null) {
+                System.out.println("You are not an instructor.");
+                return 1;
+            }
+            offering.setCoordinator(instructor);
+            if (department.equals("")) {
+                department = instructorObject.getDepartmentCode();
+            }
+            offering.setDepartment(department);
             Transaction.start();
             String exitCode = offering.save();
             if (!exitCode.equals("00000")) {

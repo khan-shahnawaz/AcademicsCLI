@@ -11,7 +11,7 @@ import static database.access.Exception.handleSQLException;
 @Command(name = "add", mixinStandardHelpOptions = true, version = "calender 0.1",
         description = "Adds an Event to the calender.")
 public class Add implements Callable<Integer> {
-    @Option(names = {"-s", "--session"}, description = "Session of the event.", required = true)
+    @Option(names = {"-s", "--session"}, description = "Session of the event.", required = true, interactive = true, echo = true, arity = "0..1", prompt = "Session(YYYY-I/YYYY-II/YYYY-S): ")
     private String session;
     @Option(names = {"-e", "--event"}, description = "Academic Event('Academic Session', 'Course Add/Drop', 'Grade Submission', 'Course Withdrawal/Audit')", required = true, interactive = true, echo = true, prompt = "Academic Event: ", arity = "0..1")
     private String event;
