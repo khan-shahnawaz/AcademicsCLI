@@ -1,8 +1,12 @@
 plugins {
     id 'java'
     id 'com.github.johnrengelman.shadow' version '7.0.0'
+    id 'jacoco'
 }
-
+jacoco {
+    toolVersion = "0.8.8"
+    reportsDir = file("$buildDir/jacoco")
+}
 group 'org.acad'
 version '1.0-SNAPSHOT'
 
@@ -25,7 +29,11 @@ dependencies {
 }
 
 test {
+    finalizedBy jacocoTestReport
     useJUnitPlatform()
+}
+jacocoTestReport {
+    dependsOn test
 }
 shadowJar {
     mergeServiceFiles()

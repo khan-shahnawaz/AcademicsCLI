@@ -27,10 +27,6 @@ public class Category implements Callable<Integer> {
         try {
             if (remove) {
                 models.CourseCategory courseCategory = models.CourseCategory.retrieve(offeringId, category, year, department, program);
-                if (courseCategory == null) {
-                    System.err.println("Course Category does not exist in the offering.");
-                    return NOT_EXISTS;
-                }
                 String exitCode = courseCategory.delete();
                 if (!exitCode.equals("00000")) {
                     System.err.println("An error occurred while removing the entry from the offering.");

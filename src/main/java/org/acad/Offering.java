@@ -133,7 +133,7 @@ public class Offering implements Callable<Integer> {
                 }
                 if (thisOffering == null) {
                     System.out.println("No offering found with the given code.");
-                    return SUCCESS;
+                    return NOT_EXISTS;
                 }
 
                 models.Catalog catalog = models.Catalog.retrieve(thisOffering.getCode());

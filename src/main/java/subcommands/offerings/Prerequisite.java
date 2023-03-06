@@ -25,10 +25,6 @@ public class Prerequisite implements Callable<Integer> {
         try {
             if (remove) {
                 models.Prerequisite prerequisite = models.Prerequisite.retrieve(offeringId, prerequisiteCourseCode);
-                if (prerequisite == null) {
-                    System.err.println("Prerequisite does not exist in the offering.");
-                    return NOT_EXISTS;
-                }
                 String exitCode = prerequisite.delete();
                 if (!exitCode.equals("00000")) {
                     System.err.println("An error occurred while removing a prerequisite from the offering.");

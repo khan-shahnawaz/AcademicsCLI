@@ -51,6 +51,7 @@ public class DBConnectionSingleton {
         try {
             properties.load(new FileInputStream(PROPERTIES_FILE));
             connection = DriverManager.getConnection(properties.getProperty("URL"), properties.getProperty("USER"), properties.getProperty("PASSWORD"));
+            userName = properties.getProperty("USER");
             return connection;
         } catch (SQLException | IOException e) {
             connection = null;

@@ -28,10 +28,6 @@ public class Update implements Callable<Integer> {
                     break;
                 }
             }
-            if (offering == null) {
-                System.err.println("Offering does not exist.");
-                return NOT_EXISTS;
-            }
             if (minCGPA != -1) {
                 offering.setMinCGPA(minCGPA);
             }

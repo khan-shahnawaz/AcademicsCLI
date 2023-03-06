@@ -31,7 +31,9 @@ public abstract class BaseModel implements DAOInterface {
         this.lastSavedValues = new HashMap<>();
         this.isSaved = false;
     }
-
+    public static void refreshConnection() {
+        BaseModel.connection = DBConnectionSingleton.restartConnection();
+    }
     public abstract Properties getProperties();
 
     public boolean getIsSaved() {
@@ -70,6 +72,7 @@ public abstract class BaseModel implements DAOInterface {
                 PreparedStatement preparedStatement = connection.prepareStatement(this.getProperties().getProperty("update"));
                 this.putValues(preparedStatement);
                 this.putConditions(preparedStatement);
+                System.out.println(preparedStatement.toString());
                 numRowUpdated = preparedStatement.executeUpdate();
                 this.updateLastSavedValues();
                 if (numRowUpdated == 0) {
@@ -78,6 +81,7 @@ public abstract class BaseModel implements DAOInterface {
                 return "00000";
 
             } catch (SQLException e) {
+                e.printStackTrace();
                 return e.getSQLState();
             } catch (Exception e) {
                 throw new RuntimeException(e);
@@ -97,12 +101,15 @@ public abstract class BaseModel implements DAOInterface {
             PreparedStatement preparedStatement = BaseModel.connection.prepareStatement(this.getProperties().getProperty("delete"));
             this.prepareDeleteStatement(preparedStatement);
             numAffectedRows = preparedStatement.executeUpdate();
+            System.out.println(preparedStatement.toString());
+
             if (numAffectedRows == 0) {
                 throw new Exception("No rows affected");
             }
             this.isSaved = false;
             return "00000";
         } catch (SQLException e) {
+            e.printStackTrace();
             return e.getSQLState();
         } catch (Exception e) {
             throw new RuntimeException(e);

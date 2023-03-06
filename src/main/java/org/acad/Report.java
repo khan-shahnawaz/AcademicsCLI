@@ -116,7 +116,6 @@ public class Report implements Callable<Integer> {
     @Override
     public Integer call() {
         try {
-            System.out.println(fileName);
             CSVReaderHeaderAware reader = new CSVReaderHeaderAware(new java.io.FileReader(fileName));
             CSVWriter writer = new CSVWriter(new java.io.FileWriter("report.csv"));
 
@@ -202,6 +201,9 @@ public class Report implements Callable<Integer> {
                 float cumCredits = 0;
                 float totalPoints = 0;
                 Map<String, ArrayList<String>> sessionMap = new HashMap<String, ArrayList<String>>();
+                if(enrollmentsMap.get(entryNumber) == null) {
+                    continue;
+                }
                 for (models.Enrollment e: enrollmentsMap.get(entryNumber)) {
 
                     for (models.Offering o: offerings) {
@@ -353,7 +355,7 @@ public class Report implements Callable<Integer> {
             return handleSQLException(e.getSQLState(), e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("An error occurred while retrieving the catalog.");
+            System.err.println("An error occurred while generating report.");
             return UNKNOWN;
         }
     }

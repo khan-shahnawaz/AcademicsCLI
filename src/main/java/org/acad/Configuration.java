@@ -1,6 +1,7 @@
 package org.acad;
 
 import database.access.DBConnectionSingleton;
+import models.BaseModel;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
@@ -61,6 +62,7 @@ public class Configuration implements Callable<Integer> {
             if (password == null) {
                 password = prevPassword;
             }
+            System.out.println(password);
             url = "jdbc:postgresql://" + host + ":" + port + "/" + database;
             properties.clear();
             properties.setProperty("URL", url);
@@ -70,6 +72,7 @@ public class Configuration implements Callable<Integer> {
             properties.store(new FileOutputStream(PROPERTIES_FILE), "Database configuration");
             System.out.println("Configuration updated successfully.");
             DBConnectionSingleton.restartConnection();
+            BaseModel.refreshConnection();
             if (DBConnectionSingleton.getConnection() == null) {
                 return 1;
             }

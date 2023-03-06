@@ -21,10 +21,6 @@ public class Teacher implements Callable<Integer> {
         try {
             if (remove) {
                 models.TeachingTeam teachingTeam = models.TeachingTeam.retrieve(offeringId, instructorEmail);
-                if (teachingTeam == null) {
-                    System.err.println("Instructor does not exist in the offering.");
-                    return UNKNOWN;
-                }
                 String exitCode = teachingTeam.delete();
                 if (!exitCode.equals("00000")) {
                     System.err.println("An error occurred while removing an instructor from the offering.");

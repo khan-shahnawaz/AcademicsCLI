@@ -14,7 +14,9 @@ class StudentTest {
     @Order(1)
     @Test
     void addStudent() {
-        int exitCode = new CommandLine(new Department()).execute("add", "-n", "Computer Science", "-c", "CS");
+        int exitCode = new CommandLine(new Student()).execute("--list");
+        assertEquals(SUCCESS, exitCode);
+        exitCode = new CommandLine(new Department()).execute("add", "-n", "Computer Science", "-c", "CS");
         assertEquals(SUCCESS, exitCode);
         exitCode = new CommandLine(new Instructor()).execute("add", "-F", "src/test/resources/instructors.csv");
         assertEquals(SUCCESS, exitCode);
@@ -33,6 +35,9 @@ class StudentTest {
     void listStudent() {
         int exitCode = new CommandLine(new Student()).execute("--list");
         assertEquals(SUCCESS, exitCode);
+        exitCode = new CommandLine(new Student()).execute("--list", "-e", "2020CSB5000");
+        assertEquals(SUCCESS, exitCode);
+        exitCode = new CommandLine(new Student()).execute("--list", "-d", "CS");
     }
 
     @Order(3)

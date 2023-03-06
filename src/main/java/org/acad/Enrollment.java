@@ -41,13 +41,16 @@ public class Enrollment implements Callable<Integer> {
             if (list) {
                 ArrayList<models.Enrollment> enrollments = models.Enrollment.retrieveAll();
                 ArrayList<models.Enrollment> studentEnrollments = new ArrayList<>();
+                System.out.println(DBConnectionSingleton.getUserName());
                 for (models.Enrollment e : enrollments) {
                     studentEnrollments.add(e);
                     System.out.println(offeringId);
+                    boolean removed = false;
                     if (!entry.equals("") && !e.getEntryNo().equals(entry)) {
+                        removed = true;
                         studentEnrollments.remove(studentEnrollments.size()-1);
                     }
-                    if (offeringId != -1 && e.getId() != offeringId) {
+                    if (offeringId != -1 && e.getId() != offeringId && !removed) {
                         studentEnrollments.remove(studentEnrollments.size()-1);
                     }
                 }
@@ -96,14 +99,14 @@ public class Enrollment implements Callable<Integer> {
                 models.Enrollment enrollment = models.Enrollment.retrieve(offeringId, entry);
                 if (enrollment == null) {
                     System.out.println("No enrollment found for the student.");
-                    return SUCCESS;
+                    return NOT_EXISTS;
                 }
                 if (entry.equals(DBConnectionSingleton.getUserName())) {
                     enrollment.setStatus("Dropped by Student");
                 } else {
                     enrollment.setStatus("Instructor Rejected");
                 }
-                String exitCode = enrollment.save();
+                String exitCode = enrollment.updateStatus();
                 if (!exitCode.equals("00000")) {
                     System.out.println("An error occurred while dropping the enrollment.");
                     return handleSQLException(exitCode, "An error occurred while dropping the enrollment.");
@@ -115,10 +118,10 @@ public class Enrollment implements Callable<Integer> {
                 models.Enrollment enrollment = models.Enrollment.retrieve(offeringId, entry);
                 if (enrollment == null) {
                     System.out.println("No enrollment found for the student.");
-                    return SUCCESS;
+                    return NOT_EXISTS;
                 }
                 enrollment.setStatus("Audit");
-                String exitCode = enrollment.save();
+                String exitCode = enrollment.updateStatus();
                 if (!exitCode.equals("00000")) {
                     System.out.println("An error occurred while auditing the enrollment.");
                     return handleSQLException(exitCode, "An error occurred while auditing the enrollment.");
@@ -130,10 +133,10 @@ public class Enrollment implements Callable<Integer> {
                 models.Enrollment enrollment = models.Enrollment.retrieve(offeringId, entry);
                 if (enrollment == null) {
                     System.out.println("No enrollment found for the student.");
-                    return SUCCESS;
+                    return NOT_EXISTS;
                 }
                 enrollment.setStatus("Withdrawn");
-                String exitCode = enrollment.save();
+                String exitCode = enrollment.updateStatus();
                 if (!exitCode.equals("00000")) {
                     System.out.println("An error occurred while withdrawing the enrollment.");
                     return handleSQLException(exitCode, "An error occurred while withdrawing the enrollment.");
@@ -151,7 +154,7 @@ public class Enrollment implements Callable<Integer> {
                 }
                 if (offeringEnrollments.size() == 0) {
                     System.out.println("No enrollments found for the offering.");
-                    return SUCCESS;
+                    return NOT_EXISTS;
                 }
                 CSVWriter writer = new CSVWriter(new FileWriter("enrollment.csv"));
                 String[] heading = { "Offering Id", "Entry Number", "Status", "Grade", "Type"};
@@ -171,8 +174,10 @@ public class Enrollment implements Callable<Integer> {
                     models.Enrollment enrollment = models.Enrollment.retrieve(Integer.parseInt(record.get("Offering Id")), record.get("Entry Number"));
                     if (enrollment == null) {
                         System.err.println("No enrollment found for the student: "+record.get("Entry Number"));
+                        continue;
                     }
                     enrollment.setGrade(record.get("Grade"));
+                    System.out.println("Updating enrollment for the student: "+record.get("Entry Number"));
                     String exitCode = enrollment.save();
                     if (!exitCode.equals("00000")) {
                         System.err.println("An error occurred while updating the enrollment for the student: "+record.get("Entry Number"));
@@ -192,7 +197,7 @@ public class Enrollment implements Callable<Integer> {
             models.Student student = models.Student.retrieve(entry);
             if (student == null) {
                 System.out.println("No student found with the given entry number.");
-                return SUCCESS;
+                return NOT_EXISTS;
             }
             ArrayList<CourseCategory> courseCategory = CourseCategory.retrieveAll();
             for (CourseCategory c : courseCategory) {

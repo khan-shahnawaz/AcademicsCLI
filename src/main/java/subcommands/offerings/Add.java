@@ -40,11 +40,13 @@ public class Add implements Callable<Integer> {
             offering.setStatus("Proposed");
             if (instructor.equals("")) {
                 instructor = getUserName();
+                System.out.println(instructor);
             }
+            System.out.println(instructor);
             models.Instructor instructorObject = models.Instructor.retrieve(instructor);
             if (instructorObject == null) {
                 System.out.println("You are not an instructor.");
-                return 1;
+                return UNAUTHORISED;
             }
             offering.setCoordinator(instructor);
             if (department.equals("")) {
@@ -52,11 +54,16 @@ public class Add implements Callable<Integer> {
             }
             offering.setDepartment(department);
             Transaction.start();
-            String exitCode = offering.save();
-            if (!exitCode.equals("00000")) {
-                Transaction.rollback();
+            String exitCode1 = offering.save();
+            models.TeachingTeam teachingTeam = new models.TeachingTeam();
+            teachingTeam.setId(offering.getId());
+            teachingTeam.setInstructor(offering.getCoordinator());
+            teachingTeam.setCoordinator(true);
+            String exitCode2 = teachingTeam.save();
+            if (!exitCode1.equals("00000") || !exitCode2.equals("00000")) {
                 System.out.println("An error occurred while adding the offering.");
-                return handleSQLException(exitCode, "Insertion failed");
+                Transaction.rollback();
+                return handleSQLException(exitCode1, "Insertion failed");
             }
             ArrayList<models.DefaultPrerequisite> defaultPrerequisites = models.DefaultPrerequisite.retrieveAll();
             for (models.DefaultPrerequisite defaultPrerequisite : defaultPrerequisites) {
@@ -65,31 +72,23 @@ public class Add implements Callable<Integer> {
                     prerequisite.setId(offering.getId());
                     prerequisite.setPrerequisiteCode(defaultPrerequisite.getPrerequisiteCode());
                     prerequisite.setMinGrade(defaultPrerequisite.getMinGrade());
-                    exitCode = prerequisite.save();
-                    if (!exitCode.equals("00000")) {
+                    exitCode1 = prerequisite.save();
+                    if (!exitCode1.equals("00000")) {
                         System.out.println("An error occurred while adding the offering.");
                         Transaction.rollback();
-                        return handleSQLException(exitCode, "Insertion failed");
+                        return handleSQLException(exitCode1, "Insertion failed");
                     }
                 }
-            }
-            models.TeachingTeam teachingTeam = new models.TeachingTeam();
-            teachingTeam.setId(offering.getId());
-            teachingTeam.setInstructor(offering.getCoordinator());
-            teachingTeam.setCoordinator(true);
-            exitCode = teachingTeam.save();
-            if (!exitCode.equals("00000")) {
-                System.out.println("An error occurred while adding the offering.");
-                Transaction.rollback();
-                return handleSQLException(exitCode, "Insertion failed");
             }
             Transaction.commit();
             System.out.println("Offering added successfully.");
             return SUCCESS;
         } catch (SQLException e) {
+            Transaction.rollback();
             e.printStackTrace();
             return handleSQLException(e.getSQLState(), e.getMessage());
         } catch (Exception e) {
+            Transaction.rollback();
             e.printStackTrace();
             System.err.println("An error occurred while retrieving the catalog.");
             return UNKNOWN;

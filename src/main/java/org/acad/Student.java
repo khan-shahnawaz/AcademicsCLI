@@ -91,7 +91,7 @@ public class Student implements Callable<Integer> {
             }
             return SUCCESS;
         } catch (SQLException e) {
-            System.out.println("Failed to fetch instructor.");
+            System.out.println("Failed to fetch Student.");
             return handleSQLException(e.getSQLState(), e.getMessage());
         } catch (Exception e) {
             return UNKNOWN;
