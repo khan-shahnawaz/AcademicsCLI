@@ -9,6 +9,7 @@ import org.xhtmlrenderer.layout.SharedContext;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -20,6 +21,7 @@ import java.util.*;
 import java.util.concurrent.Callable;
 
 import static database.access.Exception.*;
+
 @Command(name = "report", mixinStandardHelpOptions = true, description = "Generates transcripts and graduation reports for students")
 public class Report implements Callable<Integer> {
     @Option(names = {"-F", "--File"}, description = "File name(In csv containing Entry Numbers)", paramLabel = "File name", descriptionKey = "File name", interactive = true, echo = true, prompt = "File name: ", defaultValue = "", arity = "0..1")
@@ -32,43 +34,43 @@ public class Report implements Callable<Integer> {
         float cumPoints = 0;
         float points = 0;
         float faliedCredits = 0;
-        for (int i=0;i<sessionMap.size();i+=4) {
-            String grade = sessionMap.get(i+3);
-            float creditsTemp = Float.parseFloat(sessionMap.get(i+2));
+        for (int i = 0; i < sessionMap.size(); i += 4) {
+            String grade = sessionMap.get(i + 3);
+            float creditsTemp = Float.parseFloat(sessionMap.get(i + 2));
             if (grade.equals("A")) {
-                points += 10*creditsTemp;
-                cumPoints += 10*creditsTemp;
-                cumCredits+= creditsTemp;
+                points += 10 * creditsTemp;
+                cumPoints += 10 * creditsTemp;
+                cumCredits += creditsTemp;
                 credits += creditsTemp;
             } else if (grade.equals("A-")) {
-                points += 9*creditsTemp;
-                cumPoints += 9*creditsTemp;
-                cumCredits+= creditsTemp;
+                points += 9 * creditsTemp;
+                cumPoints += 9 * creditsTemp;
+                cumCredits += creditsTemp;
                 credits += creditsTemp;
             } else if (grade.equals("B")) {
-                points += 8*creditsTemp;
-                cumPoints += 8*creditsTemp;
-                cumCredits+= creditsTemp;
+                points += 8 * creditsTemp;
+                cumPoints += 8 * creditsTemp;
+                cumCredits += creditsTemp;
                 credits += creditsTemp;
             } else if (grade.equals("B-")) {
-                points += 7*creditsTemp;
-                cumPoints += 7*creditsTemp;
-                cumCredits+= creditsTemp;
+                points += 7 * creditsTemp;
+                cumPoints += 7 * creditsTemp;
+                cumCredits += creditsTemp;
                 credits += creditsTemp;
             } else if (grade.equals("C")) {
-                points += 6*creditsTemp;
-                cumPoints += 6*creditsTemp;
-                cumCredits+= creditsTemp;
+                points += 6 * creditsTemp;
+                cumPoints += 6 * creditsTemp;
+                cumCredits += creditsTemp;
                 credits += creditsTemp;
             } else if (grade.equals("C-")) {
-                points += 5*creditsTemp;
-                cumPoints += 5*creditsTemp;
-                cumCredits+= creditsTemp;
+                points += 5 * creditsTemp;
+                cumPoints += 5 * creditsTemp;
+                cumCredits += creditsTemp;
                 credits += creditsTemp;
             } else if (grade.equals("D")) {
-                points += 4*creditsTemp;
-                cumPoints += 4*creditsTemp;
-                cumCredits+= creditsTemp;
+                points += 4 * creditsTemp;
+                cumPoints += 4 * creditsTemp;
+                cumCredits += creditsTemp;
                 credits += creditsTemp;
             } else if (grade.equals("E")) {
                 points += 2 * creditsTemp;
@@ -81,8 +83,8 @@ public class Report implements Callable<Integer> {
         String sgpa = "";
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(2);
-        if ((credits+faliedCredits) != 0) {
-            sgpa = String.valueOf(df.format(points/(credits+faliedCredits)));
+        if ((credits + faliedCredits) != 0) {
+            sgpa = String.valueOf(df.format(points / (credits + faliedCredits)));
         }
         output.put("SGPA", sgpa);
         output.put("CumCredits", String.valueOf(cumCredits));
@@ -95,7 +97,7 @@ public class Report implements Callable<Integer> {
     public boolean checkGraduation(Map<String, String> reportRecord, Map<String, Float> creditsMap) {
         float extras = 0;
         boolean isEligible = true;
-        for (Map.Entry<String, Float> entry: creditsMap.entrySet()) {
+        for (Map.Entry<String, Float> entry : creditsMap.entrySet()) {
             String key = entry.getKey();
             float value = entry.getValue();
             if (key.equals("OE")) {
@@ -113,6 +115,7 @@ public class Report implements Callable<Integer> {
         }
         return isEligible;
     }
+
     @Override
     public Integer call() {
         try {
@@ -120,7 +123,7 @@ public class Report implements Callable<Integer> {
             CSVWriter writer = new CSVWriter(new java.io.FileWriter("report.csv"));
 
             writer.writeNext(new String[]{"Entry Number", "Name", "Program",
-                    "Department","SC(Required)", "SC(Completed)", "SE(Required)",
+                    "Department", "SC(Required)", "SC(Completed)", "SE(Required)",
                     "SE(Completed)", "GE(Required)", "GE(Completed)", "PC(Required)",
                     "PC(Completed)", "PE(Required)", "PE(Completed)", "HC(Required)",
                     "HC(Completed)", "HE(Required)", "HE(Completed)", "II(Required)",
@@ -130,8 +133,8 @@ public class Report implements Callable<Integer> {
             Map<String, String> record;
 
             ArrayList<models.Enrollment> enrollments = models.Enrollment.retrieveAll();
-            Map<String,ArrayList<models.Enrollment>> enrollmentsMap = new HashMap<String,ArrayList<Enrollment>>();
-            for (models.Enrollment e: enrollments) {
+            Map<String, ArrayList<models.Enrollment>> enrollmentsMap = new HashMap<String, ArrayList<Enrollment>>();
+            for (models.Enrollment e : enrollments) {
                 if (enrollmentsMap.containsKey(e.getEntryNo())) {
                     enrollmentsMap.get(e.getEntryNo()).add(e);
                 } else {
@@ -141,8 +144,8 @@ public class Report implements Callable<Integer> {
                 }
             }
             ArrayList<models.Offering> offerings = models.Offering.retrieveAll();
-            while ((record = reader.readMap())!=null) {
-                Map<String, String > reportRecord = new HashMap<String, String>();
+            while ((record = reader.readMap()) != null) {
+                Map<String, String> reportRecord = new HashMap<String, String>();
                 String entryNumber = record.get("Entry Number");
                 reportRecord.put("Entry Number", entryNumber);
                 ArrayList<models.Curriculum> curriculums = models.Curriculum.retrieveAll();
@@ -179,9 +182,9 @@ public class Report implements Callable<Integer> {
                 reportRecord.put("Total Credits", "0");
                 reportRecord.put("CGPA", "0");
                 reportRecord.put("Graduation Status", "Ineligible");
-                for (models.Curriculum c: curriculums) {
+                for (models.Curriculum c : curriculums) {
                     if (c.getProgram().equals(student.getProgram())) {
-                        reportRecord.put(c.getCourseType()+"(Required)", String.valueOf(c.getMinCredits()));
+                        reportRecord.put(c.getCourseType() + "(Required)", String.valueOf(c.getMinCredits()));
                     }
                 }
                 HashMap<String, Float> creditsMap = new HashMap<String, Float>();
@@ -201,12 +204,12 @@ public class Report implements Callable<Integer> {
                 float cumCredits = 0;
                 float totalPoints = 0;
                 Map<String, ArrayList<String>> sessionMap = new HashMap<String, ArrayList<String>>();
-                if(enrollmentsMap.get(entryNumber) == null) {
+                if (enrollmentsMap.get(entryNumber) == null) {
                     continue;
                 }
-                for (models.Enrollment e: enrollmentsMap.get(entryNumber)) {
+                for (models.Enrollment e : enrollmentsMap.get(entryNumber)) {
 
-                    for (models.Offering o: offerings) {
+                    for (models.Offering o : offerings) {
                         if (o.getId() == e.getId()) {
                             offering = o;
                             break;
@@ -222,7 +225,7 @@ public class Report implements Callable<Integer> {
                             e.getGrade().equals("C-") ||
                             e.getGrade().equals("D")
                     ) {
-                        creditsMap.put(e.getCourseType(), creditsMap.get(e.getCourseType()) +catalog.getCredits());
+                        creditsMap.put(e.getCourseType(), creditsMap.get(e.getCourseType()) + catalog.getCredits());
                     }
                     String session = String.join("-", String.valueOf(offering.getYear()), offering.getSemester());
                     if (sessionMap.containsKey(session)) {
@@ -240,23 +243,23 @@ public class Report implements Callable<Integer> {
                         sessionMap.put(session, temp);
                     }
                 }
-                for (String courseType: creditsMap.keySet()) {
-                    reportRecord.put(courseType+"(Completed)", String.valueOf(creditsMap.get(courseType)));
+                for (String courseType : creditsMap.keySet()) {
+                    reportRecord.put(courseType + "(Completed)", String.valueOf(creditsMap.get(courseType)));
                 }
                 ArrayList<String> sortedSessions = new ArrayList<String>();
-                for (String session: sessionMap.keySet()) {
+                for (String session : sessionMap.keySet()) {
                     sortedSessions.add(session);
                 }
                 sortedSessions.sort(null);
-                for (String session: sortedSessions) {
-                    Map<String, String > semDetails = calcSGPA(sessionMap.get(session));
+                for (String session : sortedSessions) {
+                    Map<String, String> semDetails = calcSGPA(sessionMap.get(session));
                     totalPoints += Float.parseFloat(semDetails.get("CumPoints"));
                     cumCredits += Float.parseFloat(semDetails.get("CumCredits"));
                     String cgpa = "0";
                     DecimalFormat df = new DecimalFormat();
                     df.setMaximumFractionDigits(2);
-                    if (cumCredits !=0) {
-                        cgpa = String.valueOf(df.format(totalPoints/cumCredits));
+                    if (cumCredits != 0) {
+                        cgpa = String.valueOf(df.format(totalPoints / cumCredits));
                     }
                     InputStream inputStream = getClass().getResourceAsStream("/gradesheet.html");
                     String html = new String(inputStream.readAllBytes());
@@ -307,8 +310,8 @@ public class Report implements Callable<Integer> {
                 String cgpa = "0";
                 DecimalFormat df = new DecimalFormat();
                 df.setMaximumFractionDigits(2);
-                if (cumCredits !=0) {
-                    cgpa = String.valueOf(df.format(totalPoints/cumCredits));
+                if (cumCredits != 0) {
+                    cgpa = String.valueOf(df.format(totalPoints / cumCredits));
                 }
                 reportRecord.put("CGPA", cgpa);
                 reportRecord.put("Total Credits", String.valueOf(cumCredits));
@@ -348,8 +351,8 @@ public class Report implements Callable<Integer> {
                 writer.writeNext(row);
             }
             writer.close();
-            System.out.println("Transcripts generated successfully and saved at "+new File("Transcripts").getAbsolutePath());
-            System.out.println("Report generated successfully and saved at "+new File("Report.csv").getAbsolutePath());
+            System.out.println("Transcripts generated successfully and saved at " + new File("Transcripts").getAbsolutePath());
+            System.out.println("Report generated successfully and saved at " + new File("Report.csv").getAbsolutePath());
             return SUCCESS;
         } catch (SQLException e) {
             return handleSQLException(e.getSQLState(), e.getMessage());

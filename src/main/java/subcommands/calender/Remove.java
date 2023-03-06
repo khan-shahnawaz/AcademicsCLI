@@ -13,7 +13,7 @@ import static database.access.Exception.*;
 public class Remove implements Callable<Integer> {
     @Option(names = {"-s", "--session"}, description = "Session of the event.", required = true)
     private String session;
-    @Option(names = {"-e", "--event"}, description = "Academic Event('Academic Session', 'Course Add/Drop', 'Grade Submission', 'Course Withdrawal/Audit')", required = true, interactive = true, echo = true, prompt = "Academic Event: ",arity = "0..1")
+    @Option(names = {"-e", "--event"}, description = "Academic Event('Academic Session', 'Course Add/Drop', 'Grade Submission', 'Course Withdrawal/Audit')", required = true, interactive = true, echo = true, prompt = "Academic Event: ", arity = "0..1")
     private String event;
 
     @Override

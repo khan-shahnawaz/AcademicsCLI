@@ -9,30 +9,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Completed Transcript generation and graduation check">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/acad/EnrollmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/acad/OfferingTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/acad/ReportTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/student.csv" afterDir="false" />
+    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Fixed some bugs">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acad/Profile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/acad/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/acad/ProfileTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/enrollment.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/instructors.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/students.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/access/DBConnectionSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/access/DBConnectionSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/BaseModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Enrollment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Instructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Instructor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Configuration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Enrollment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Offering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Offering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/calender/Remove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/calender/Remove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Prerequisite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Prerequisite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Teacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/enrollment.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/enrollment.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/StudentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/StudentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/gradesheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gradesheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/instructor.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/instructor.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/student.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/student.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/ConfigurationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/ConfigurationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/EnrollmentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/EnrollmentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/OfferingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/OfferingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/ReportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/ReportTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/student.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/student.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +162,7 @@
       <recent name="Models" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'AcademicsCLI.test'">
+  <component name="RunManager" selected="Gradle.AcademicsCLI [shadowJar]">
     <configuration name="AcademicsCLI [:Main.main()]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -344,9 +346,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AcademicsCLI [shadowJar]" />
         <item itemvalue="Gradle.Tests in 'AcademicsCLI.test'" />
         <item itemvalue="Gradle.EnrollmentTest" />
-        <item itemvalue="Gradle.AcademicsCLI [shadowJar]" />
         <item itemvalue="Gradle.StudentTest" />
         <item itemvalue="Gradle.CatalogTest" />
       </list>
@@ -372,7 +374,8 @@
       <workItem from="1676845293292" duration="55242000" />
       <workItem from="1677857179627" duration="7036000" />
       <workItem from="1677943948841" duration="12919000" />
-      <workItem from="1678039541947" duration="43974000" />
+      <workItem from="1678039541947" duration="44610000" />
+      <workItem from="1678131381587" duration="5224000" />
     </task>
     <task id="LOCAL-00001" summary="Added class for database connection">
       <created>1676203690303</created>
@@ -472,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678081527171</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Completed some unit tests">
+      <created>1678130725904</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1678130725904</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +546,9 @@
     <MESSAGE value="Completed subcommands for Enrollement and Offerings" />
     <MESSAGE value="Completed Grades Submission" />
     <MESSAGE value="Completed Transcript generation and graduation check" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed Transcript generation and graduation check" />
+    <MESSAGE value="Completed some unit tests" />
+    <MESSAGE value="Fixed some bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -554,7 +566,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AcademicsCLI$AcademicsCLI__shadowJar_.ic" NAME="AcademicsCLI [shadowJar] Coverage Results" MODIFIED="1677857835133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1678130628786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1678135821962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$CatalogTest.ic" NAME="CatalogTest Coverage Results" MODIFIED="1676740492223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$AcademicsCLI___Main_main___.ic" NAME="AcademicsCLI [:Main.main()] Coverage Results" MODIFIED="1678109099735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$.ic" NAME=" Coverage Results" MODIFIED="1676786889272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

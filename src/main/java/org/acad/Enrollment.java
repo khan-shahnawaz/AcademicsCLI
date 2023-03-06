@@ -48,10 +48,10 @@ public class Enrollment implements Callable<Integer> {
                     boolean removed = false;
                     if (!entry.equals("") && !e.getEntryNo().equals(entry)) {
                         removed = true;
-                        studentEnrollments.remove(studentEnrollments.size()-1);
+                        studentEnrollments.remove(studentEnrollments.size() - 1);
                     }
                     if (offeringId != -1 && e.getId() != offeringId && !removed) {
-                        studentEnrollments.remove(studentEnrollments.size()-1);
+                        studentEnrollments.remove(studentEnrollments.size() - 1);
                     }
                 }
                 if (studentEnrollments.size() == 0) {
@@ -157,10 +157,10 @@ public class Enrollment implements Callable<Integer> {
                     return NOT_EXISTS;
                 }
                 CSVWriter writer = new CSVWriter(new FileWriter("enrollment.csv"));
-                String[] heading = { "Offering Id", "Entry Number", "Status", "Grade", "Type"};
+                String[] heading = {"Offering Id", "Entry Number", "Status", "Grade", "Type"};
                 writer.writeNext(heading);
                 for (models.Enrollment e : offeringEnrollments) {
-                    String [] record = { String.valueOf(e.getId()), e.getEntryNo(), e.getStatus(), e.getGrade(), e.getCourseType()};
+                    String[] record = {String.valueOf(e.getId()), e.getEntryNo(), e.getStatus(), e.getGrade(), e.getCourseType()};
                     writer.writeNext(record);
                 }
                 writer.close();
@@ -173,15 +173,15 @@ public class Enrollment implements Callable<Integer> {
                 while ((record = reader.readMap()) != null) {
                     models.Enrollment enrollment = models.Enrollment.retrieve(Integer.parseInt(record.get("Offering Id")), record.get("Entry Number"));
                     if (enrollment == null) {
-                        System.err.println("No enrollment found for the student: "+record.get("Entry Number"));
+                        System.err.println("No enrollment found for the student: " + record.get("Entry Number"));
                         continue;
                     }
                     enrollment.setGrade(record.get("Grade"));
-                    System.out.println("Updating enrollment for the student: "+record.get("Entry Number"));
+                    System.out.println("Updating enrollment for the student: " + record.get("Entry Number"));
                     String exitCode = enrollment.save();
                     if (!exitCode.equals("00000")) {
-                        System.err.println("An error occurred while updating the enrollment for the student: "+record.get("Entry Number"));
-                        return handleSQLException(exitCode, "An error occurred while updating the enrollment for the student: "+record.get("Entry Number"));
+                        System.err.println("An error occurred while updating the enrollment for the student: " + record.get("Entry Number"));
+                        return handleSQLException(exitCode, "An error occurred while updating the enrollment for the student: " + record.get("Entry Number"));
                     }
                 }
                 System.out.println("Grades submitted Successfully");

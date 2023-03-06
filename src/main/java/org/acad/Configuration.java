@@ -2,12 +2,14 @@ package org.acad;
 
 import database.access.DBConnectionSingleton;
 import models.BaseModel;
+import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.sql.PreparedStatement;
 import java.util.Properties;
 import java.util.concurrent.Callable;
 
@@ -33,9 +35,19 @@ public class Configuration implements Callable<Integer> {
     private String user;
     @Option(names = {"-w", "--password"}, description = "The password to connect to the database.", interactive = true, prompt = "Password: ", arity = "0..1")
     private String password;
+    @Option(names = {"-o", "--logout"}, description = "Logout from the database.")
+    private boolean logout;
 
     public Integer call() {
         try {
+            if (logout) {
+                String sql = "CALL log_activity(false)";
+                PreparedStatement preparedStatement = DBConnectionSingleton.getConnection().prepareStatement(sql);
+                preparedStatement.execute();
+                new CommandLine(new Configuration()).execute("-w", ""); // To clear the password
+                System.out.println("Logged out successfully.");
+                return SUCCESS;
+            }
             Properties properties = new Properties();
             InputStream inputStream = new FileInputStream(PROPERTIES_FILE);
             properties.load(inputStream);
@@ -77,6 +89,9 @@ public class Configuration implements Callable<Integer> {
                 return 1;
             }
             System.out.println("Login successful!");
+            String sql = "CALL log_activity(true)";
+            PreparedStatement preparedStatement = DBConnectionSingleton.getConnection().prepareStatement(sql);
+            preparedStatement.execute();
             return SUCCESS;
         } catch (Exception e) {
             System.err.println("Invalid Credentials or Database not found.");

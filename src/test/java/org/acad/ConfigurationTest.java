@@ -6,6 +6,7 @@ import picocli.CommandLine;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
+import static database.access.Exception.SUCCESS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ConfigurationTest {
@@ -18,6 +19,10 @@ class ConfigurationTest {
         in = new ByteArrayInputStream("1234\n".getBytes());
         System.setIn(in);
         exitCode = new CommandLine(new Configuration()).execute("-d", "academics", "-h", "localhost", "-w", "-p", "5432", "-u", "postgres");
-        assertEquals(0, exitCode);
+        assertEquals(SUCCESS, exitCode);
+        exitCode = new CommandLine(new Configuration()).execute("-o");
+        assertEquals(SUCCESS, exitCode);
+        exitCode = new CommandLine(new Configuration()).execute("-w", "1234");
+        assertEquals(SUCCESS, exitCode);
     }
 }

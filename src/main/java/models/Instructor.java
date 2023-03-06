@@ -3,6 +3,7 @@ package models;
 import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -140,5 +141,18 @@ public class Instructor extends BaseModel {
 
     protected void prepareDeleteStatement(PreparedStatement preparedStatement) throws Exception {
         preparedStatement.setString(1, this.lastSavedValues.get("email"));
+    }
+
+    public String updateProfile() {
+        try {
+            PreparedStatement preparedStatement = Instructor.connection.prepareStatement(properties.getProperty("updateProfile"));
+            preparedStatement.setString(1, this.address);
+            preparedStatement.setString(2, this.phone);
+            preparedStatement.setString(3, this.email);
+            preparedStatement.executeUpdate();
+            return "00000";
+        } catch (SQLException e) {
+            return e.getSQLState();
+        }
     }
 }
