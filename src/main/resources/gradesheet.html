@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gradesheet</title>
+    <style>
+        body {
+            display: flex;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #dddddd;
+        }
+        .grade {
+            font-weight: bold;
+        }
+        /* Define the styles for the header */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header h2 {
+            margin: 0;
+        }
+        /* Define the styles for the logo */
+        .logo{
+            max-width: 150px;
+            max-height: 75px;
+            float: left;
+            margin-right: 20px;
+        }
+        .date {
+            align-self: flex-end;
+        }
+
+    </style>
+</head>
+<body>
+<!-- Insert the institute name and logo -->
+<div class="header">
+    <img class="logo" src="{logo}" alt="Institute Logo">
+    <h1>{institute_name}</h1>
+    <h2>Gradesheet for {session}</h2>
+</div>
+<!-- Insert the student details -->
+<p><strong>Name:</strong> {name}</p>
+<p><strong>Entry Number:</strong> {entry_number}</p>
+<p><strong>Program:</strong> {program}</p>
+<p><strong>Department:</strong> {department}</p>
+<!-- Insert the courses table -->
+<table>
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Title</th>
+        <th>Credits</th>
+        <th>Grade</th>
+    </tr>
+    </thead>
+    <tbody>
+    {#courses}
+    {/courses}
+    </tbody>
+</table>
+<!-- Insert the CGPA, SGPA, and earned credits -->
+<p><strong>Semester Grade Point Average(SGPA):</strong> {sgpa}</p>
+<p><strong>Cumulative Grade Point Average(CGPA):</strong> {cgpa}</p>
+<p><strong>Earned Credits:</strong> {earned_credits}</p>
+<p><strong>Cumulative Credits:</strong> {cumulative_credits}</p>
+<!-- Insert the date -->
+<div class="date">
+    <p>Date: {date}</p>
+</div>
+</body>
+</html>

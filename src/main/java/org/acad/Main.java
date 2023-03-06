@@ -12,7 +12,7 @@ import java.util.concurrent.Callable;
 
 @Command(name = "acad", mixinStandardHelpOptions = true, subcommands = {
         Catalog.class, Configuration.class, Calender.class, Curriculum.class, Department.class,
-        Instructor.class, Student.class, Offering.class, Enrollment.class}, version = "acad 0.1",
+        Instructor.class, Student.class, Offering.class, Enrollment.class,  Report.class}, version = "acad 0.1",
         description = "A command line interface for the Academic database.")
 public class Main implements Callable<Integer> {
     public static void checkConfigFile() {

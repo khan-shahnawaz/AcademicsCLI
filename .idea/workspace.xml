@@ -9,19 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Completed subcommands for Enrollement and Offerings">
+    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Completed Grades Submission">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/acad/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gradesheet.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/access/DBConnectionSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/access/DBConnectionSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/access/Exception.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/access/Exception.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/BaseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Enrollment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Enrollment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Offering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Offering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/calender/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/calender/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Add.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/offerings/Update.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/ConfigurationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/ConfigurationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,38 +92,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "D:/Java Projects/AcademicsCLI/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java Projects/AcademicsCLI/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "RunConfigurationTargetLRU": [
-      "90e30c19-e878-434d-a7ff-42a91e68c56f/database/\"academics\""
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;90e30c19-e878-434d-a7ff-42a91e68c56f/database/\&quot;academics\&quot;&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Java Projects\AcademicsCLI\src\main\resources" />
@@ -350,7 +343,8 @@
       <workItem from="1676788140827" duration="21064000" />
       <workItem from="1676845293292" duration="55242000" />
       <workItem from="1677857179627" duration="7036000" />
-      <workItem from="1677943948841" duration="9058000" />
+      <workItem from="1677943948841" duration="12919000" />
+      <workItem from="1678039541947" duration="13109000" />
     </task>
     <task id="LOCAL-00001" summary="Added class for database connection">
       <created>1676203690303</created>
@@ -436,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676925657920</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Completed Grades Submission">
+      <created>1678032231936</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678032231936</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +499,8 @@
     <MESSAGE value="Completed subcommand for instructors" />
     <MESSAGE value="Completed subcommand for student" />
     <MESSAGE value="Completed subcommands for Enrollement and Offerings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed subcommands for Enrollement and Offerings" />
+    <MESSAGE value="Completed Grades Submission" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed Grades Submission" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
