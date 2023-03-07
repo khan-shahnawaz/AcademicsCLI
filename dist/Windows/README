@@ -1,0 +1,3 @@
+1. Put both the files in some directory.
+2. Add the directory to the path in windows.
+3. Open the command prompt and type acad --help to use the application.

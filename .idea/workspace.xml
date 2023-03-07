@@ -12,7 +12,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Added UML diagrams in docs">
+    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Added dummy data and Unit Test Plan">
+      <change afterPath="$PROJECT_DIR$/UnitTestPlan.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/data/README" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/data/Transcripts/2020CSB1060-2020-I.pdf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/data/Transcripts/2020CSB1060-2020-II.pdf" afterDir="false" />
@@ -921,7 +922,7 @@
       <workItem from="1678189526934" duration="277000" />
       <workItem from="1678189846537" duration="123000" />
       <workItem from="1678189999395" duration="69000" />
-      <workItem from="1678190103331" duration="5949000" />
+      <workItem from="1678190103331" duration="7116000" />
     </task>
     <task id="LOCAL-00001" summary="Added class for database connection">
       <created>1676203690303</created>
@@ -1056,7 +1057,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678195753868</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added dummy data and Unit Test Plan">
+      <created>1678202209300</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1678202209300</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1125,7 +1133,8 @@
     <MESSAGE value="Added database files" />
     <MESSAGE value="Updated README.md" />
     <MESSAGE value="Added UML diagrams in docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added UML diagrams in docs" />
+    <MESSAGE value="Added dummy data and Unit Test Plan" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dummy data and Unit Test Plan" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
