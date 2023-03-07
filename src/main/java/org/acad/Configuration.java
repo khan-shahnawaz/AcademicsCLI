@@ -74,7 +74,6 @@ public class Configuration implements Callable<Integer> {
             if (password == null) {
                 password = prevPassword;
             }
-            System.out.println(password);
             url = "jdbc:postgresql://" + host + ":" + port + "/" + database;
             properties.clear();
             properties.setProperty("URL", url);

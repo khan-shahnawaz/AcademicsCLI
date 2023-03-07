@@ -209,7 +209,6 @@ public class Offering extends BaseModel {
                 int numRowInserted;
                 PreparedStatement preparedStatement = BaseModel.connection.prepareStatement(this.getProperties().getProperty("insert"));
                 putValues(preparedStatement);
-                System.out.println(preparedStatement);
                 numRowInserted = preparedStatement.executeUpdate();
                 this.updateLastSavedValues();
                 insertedOffering = Offering.retrieve(this.code, this.semester, this.year, this.section);

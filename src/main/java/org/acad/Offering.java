@@ -206,7 +206,6 @@ public class Offering implements Callable<Integer> {
         } catch (SQLException e) {
             return handleSQLException(e.getSQLState(), e.getMessage());
         } catch (Exception e) {
-            e.printStackTrace();
             System.err.println("An error occurred while retrieving the catalog.");
             return UNKNOWN;
         }

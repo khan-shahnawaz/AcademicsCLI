@@ -44,7 +44,6 @@ public class Enrollment implements Callable<Integer> {
                 System.out.println(DBConnectionSingleton.getUserName());
                 for (models.Enrollment e : enrollments) {
                     studentEnrollments.add(e);
-                    System.out.println(offeringId);
                     boolean removed = false;
                     if (!entry.equals("") && !e.getEntryNo().equals(entry)) {
                         removed = true;
@@ -221,7 +220,6 @@ public class Enrollment implements Callable<Integer> {
         } catch (SQLException e) {
             return handleSQLException(e.getSQLState(), e.getMessage());
         } catch (Exception e) {
-            e.printStackTrace();
             System.err.println("An error occurred while retrieving the catalog.");
             return UNKNOWN;
         }

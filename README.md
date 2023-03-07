@@ -71,3 +71,7 @@ Commands:
   report      Generates transcripts and graduation reports for students
   profile     Update profile information.
 ```
+
+## Dummy Data
+- The instructions to add dummy data is present in */data*.
+- It also contains some transcripts and graduation reports for students.

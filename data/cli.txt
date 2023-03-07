@@ -1,0 +1,629 @@
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u dean_ug -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Computer Science" -c="CS"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Electrical Engineering" -c="EE"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Mechanical Engineering" -c="ME"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Civil Engineering" -c="CE"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Chemical Engineering" -c="CH"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Biotechnology" -c="BT"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Metallurical Engineering" -c="MM"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Mathematics and Computing" -c="MC"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Physics" -c="PH"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Chemistry" -c="CY"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Humanities and Social Sciences" -c="HS"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Mathematics" -c="MA"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar department add -n="Biomedical Engineering" -c="BM"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar instructor add -F instructors.csv
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar student add -F students.csv
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS102 -n="ENGLISH LANGUAGE SKILLS" -s 2-0.67-2-4.33-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS103 -n="PROFESSIONAL ENGLISH COMMUNICATION" -s 2-0.67-2-4.33-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA101 -n="CALCULUS" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C PH101 -n="PHYSICS FOR ENGINEERS" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CH101 -n="Introduction to Chemical Engineering" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS101 -n="Discrete Mathematical Structures" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CY101 -n="CHEMISTRY FOR ENGINEERS" -s 3-1-2-6-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C GE103 -n="INTRODUCTION TO COMPUTING AND DATA STRUCTURES" -s 3-0-3-7.5-4.5 -c 4.5 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C GE105 -n="ENGINEERING DRAWING" -s 0-0-3-1.5-1.5 -c 1.5 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C GE106 -n="Material Science for Electrical and Electronics Engieneers" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C GE110 -n="Introduction to Metallurgical and Materials Engineering" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA102 -n="Linear Algebra, Integral Transforms and Special Functions" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C ME101 -n="Engineering Mechanics" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS101 -n="HISTORY OF TECHNOLOGY" -s 1.5-0.5-0-2.5-1.5 -c 1.5 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C GE104 -n="INTRODUCTION TO ELECTRICAL ENGINEERING" -s 2-0.67-2-4.33-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C GE101 -n="TECHNOLOGY MUSEUM LAB" -s 0-0-2-1-1 -c 1 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C GE102 -n="WORKSHOP PRACTICE" -s 0-0-4-2-2 -c 2 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C PH102 -n="PHYSICS FOR ENGINEERS Lab" -s 0-0-4-2-2 -c 2 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CE301 -n="Structural Analysis" -s 2-0.67-0-3-2 -c 2 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CE302 -n="Pipe and Open Channel Hydraulics" -s 2-0.67-2-4-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CE303 -n="Soil Mechanics" -s 2-0.67-2-4-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA202 -n="Probability and Statistics" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS202 -n="HUMAN GEOGRAPHY AND SOCIAL NEEDS" -s 1-0.33-4-3.67-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C GE108 -n="Basic Electronics" -s 2-0.67-2-4.33-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C GE109 -n="Introduction to Engineering Products" -s 0-0-2-1-1 -c 1 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CH203 -n="Heat & Mass Transfer" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CH204 -n="Fluid Mechanics" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CH231 -n="Fluid Mechanics, Heat & Mass Transfer Lab" -s 0-0-4-2-2 -c 2 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CH220 -n="Seminar-II" -s 0-0-2-1-1 -c 1 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CY230 -n="INTRODUCTION TO ORGANIC CHEMISTRY AND BIOCHEMISTRY" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS202 -n="Programming Paradigms and Pragmatics" -s 3-1-2-6-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog prereq CS202 GE103 NP
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS204 -n="Computer Architecture" -s 3-1-2-6-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog prereq CS204 GE103 NP
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C EE209 -n="Circuit Theory" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C EE207 -n="Control Engineering" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C EE206 -n="Electromechanics Laboratory" -s 0-0-3-1.5-1.5 -c 1.5 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA203 -n="Probability and Stochastic Processes" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C BM101 -n="Biology for Engineers" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS201 -n="Economics" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C GE107 -n="Tinkering lab" -s 0-0-3-1.5-1.5 -c 1.5 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA204 -n="Introduction to Numerical Analysis" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA426 -n="Theory of computation" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA205 -n="Computing Lab" -s 0-0-4-2-2 -c 2 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C ME203 -n="Theory of Machines" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C ME205 -n="Design Lab-I" -s 0-0-4-2-2 -c 2 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MM206 -n="Principles of Extractive Metallurgy" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MM207 -n="Phase Transformation and Heat Treatment" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MM208 -n="Phase Transformation and Heat Treatment Lab" -s 0-0-2-1-1 -c 1 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CE403 -n="Foundation Engineering" -s 2-1-0-3-2 -c 2 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CE405 -n="Waste Water Engineering" -s 2-1-3-4.5-3.5 -c 3.5 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CE406 -n="Steel Stuctures" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CE407 -n="Transportation Engineering" -s 3-1-2-6-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS301 -n="Industrial Management" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CP301 -n="Development Engineering Project" -s 0-0-6-3-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CP302 -n="Capstone I" -s 0-0-6-3-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CH304 -n="Process Equipment Design" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CH305 -n="Process Design and Econimics" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CH331 -n="Process Control Lab" -s 0-0-4-2-2 -c 2 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CH420 -n="ASPECTS OF CHEMICAL BUSINESS AND ETHICS" -s 0-0-2-1-1 -c 1 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS304 -n="Computer Networks" -s 3-1-2-6-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS305 -n="Software Engineering" -s 3-1-2-6-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS616 -n="Advanced Computer Vision" -s 2-0-2-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS517 -n="Digital Image Processing and Analysis" -s 2-1-2-4-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS535 -n="Introduction to game theory and mechanism design" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS539 -n="IoT" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS604 -n="Advanced Operating Systems" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS503 -n="Machine Learning" -s 3-0-2-7-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS533 -n="Reinforcement Learning" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS543 -n="Reinforcement Learning Lab" -s 0-0-2-1-1 -c 1 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS546 -n="Introduction to Agriculture Cyber Physical Systems" -s 2-0-2-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS550 -n="Research Methodologies in Computer Science" -s 1-0-0-2-1 -c 1 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS531 -n="Memory Systems and Architecture" -s 3-1-0-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS712 -n="Topics in Artificial Intelligence" -s 2-0-2-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS603 -n="Combinatorial Optimization (revision submitted)" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS536 -n="Graph Theory" -s 3-2-0-4-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS549 -n="IoT Lab (Approval pending)" -s 0-0-3-0-1.5 -c 1.5 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CS521 -n="Fundamentals of data science" -s 2-0-2-5-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS505 -n="Sound patterns in human language" -s 3-0-0-0-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS506 -n="Brain and Language" -s 3-0-0-0-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS507 -n="Positive Psychology & Wellbeing" -s 3-0-0-0-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS491 -n="Cine Politics and National Emergency" -s 3-0-0-0-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS406 -n="Managerial Science" -s 3-0-0-0-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS463 -n="Financial Markets and Institutions" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C HS405 -n="Chinese Level A1" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA703 -n="Computational PDE" -s 3-1-2-6-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA628 -n="Financial Derivatives Pricing" -s 3-0-2-7-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA605 -n="Introduction to Non-linear Dynamics" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C MA517 -n="Distributed Algorithms" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C PH457 -n="Engineering Photonics" -s 3-0-0-0-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C BM607 -n="Medical Devices and Equipment" -s 3-0-2-7-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C BM609 -n="Physics of Medical Imaging" -s 3-0-2-7-4 -c 4 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C BM614 -n="Immunology and Infection" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C BM612 -n="Tissue Engineering and Regenerative Medicine" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CY427 -n="Interpretive Molecular Spectroscopy" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CY452 -n="Material Chemisrty" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C CY516 -n="Non- Equilibrium statistical mechanics" -s 3-0-0-6-3 -c 3 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar catalog add -C NS102 -n="NSS" -s 0-0-2-1-1 -c 1 -d="Not Available"
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Academic Session" -s 2020-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Add/Drop" -s 2020-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Grade Submission" -s 2020-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Withdrawal/Audit" -s 2020-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Academic Session" -s 2020-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Add/Drop" -s 2020-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Grade Submission" -s 2020-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Withdrawal/Audit" -s 2020-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Academic Session" -s 2021-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Add/Drop" -s 2021-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Grade Submission" -s 2021-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Withdrawal/Audit" -s 2021-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Academic Session" -s 2021-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Add/Drop" -s 2021-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Grade Submission" -s 2021-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Withdrawal/Audit" -s 2021-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Academic Session" -s 2022-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Add/Drop" -s 2022-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Grade Submission" -s 2022-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Withdrawal/Audit" -s 2022-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Academic Session" -s 2022-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Add/Drop" -s 2022-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Grade Submission" -s 2022-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Withdrawal/Audit" -s 2022-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Academic Session" -s 2023-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Add/Drop" -s 2023-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Grade Submission" -s 2023-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Withdrawal/Audit" -s 2023-I -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Academic Session" -s 2023-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Add/Drop" -s 2023-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Grade Submission" -s 2023-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar calender add -e "Course Withdrawal/Audit" -s 2023-II -S 2020-01-01 -E 9999-01-01
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u hfgvzrc_uvvxrvn@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS102 -g 0 -s 2020-II -S 1 -i hfgvzrc_uvvxrvn@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 1 yjtz_xve@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HC -i 1 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 1 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u sro_ohorq@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS103 -g 0 -s 2020-I -S 1 -i sro_ohorq@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 2 grgppb_hadd@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HC -i 2 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 2 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u wezeihcj_uvx@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA101 -g 0 -s 2020-II -S 1 -i wezeihcj_uvx@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 3 rhaagb_ohmkfdeu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 3 ezldzdl_szc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 3 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 3 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u whqkx_bdt@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c PH101 -g 0 -s 2020-II -S 1 -i whqkx_bdt@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 4 uttojv_lue@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 4 ewcgrn_fuf@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 4 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 4 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u bnkhca_aincssem@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CH101 -g 0 -s 2020-I -S 1 -i bnkhca_aincssem@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 5 dbvw_bywvh@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 5 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 5 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u qazgw_patu@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS101 -g 0 -s 2020-II -S 1 -i qazgw_patu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PC -i 6 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 6 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u bby_ernb@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CY101 -g 0 -s 2020-I -S 1 -i bby_ernb@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 7 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 7 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u uvd_ndrwc@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c GE103 -g 0 -s 2020-I -S 1 -i uvd_ndrwc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 8 jqhjmszu_rjm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c GE -i 8 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 8 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u jyvxgu_qkvdvfz@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c GE105 -g 0 -s 2020-II -S 1 -i jyvxgu_qkvdvfz@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 9 jqhjmszu_rjm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 9 nyjdv_rvlots@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c GE -i 9 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 9 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u jyvxgu_qkvdvfz@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c GE106 -g 0 -s 2020-I -S 1 -i jyvxgu_qkvdvfz@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 10 uvd_ndrwc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c GE -i 10 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 10 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u hrflohov_kwvkh@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c GE110 -g 0 -s 2020-II -S 1 -i hrflohov_kwvkh@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 11 htjcwol_lmv@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c GE -i 11 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 11 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u qcrrqlqn_fofdonmm@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA102 -g 0 -s 2020-II -S 1 -i qcrrqlqn_fofdonmm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 12 ezldzdl_szc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 12 jyvxgu_qkvdvfz@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 12 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 12 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u mcjvv_itwjiaq@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c ME101 -g 0 -s 2020-II -S 1 -i mcjvv_itwjiaq@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 13 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 13 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u yjtz_xve@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS101 -g 0 -s 2020-I -S 1 -i yjtz_xve@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HC -i 14 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 14 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u rhaagb_ohmkfdeu@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c GE104 -g 0 -s 2020-II -S 1 -i rhaagb_ohmkfdeu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 15 hrflohov_kwvkh@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c GE -i 15 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 15 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u rhaagb_ohmkfdeu@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c GE101 -g 0 -s 2020-I -S 1 -i rhaagb_ohmkfdeu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 16 hrflohov_kwvkh@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 16 jqhjmszu_rjm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c GE -i 16 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 16 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ksyrtvt_pgabvnnl@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c GE102 -g 0 -s 2020-I -S 1 -i ksyrtvt_pgabvnnl@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 17 ezldzdl_szc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c GE -i 17 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 17 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ewcgrn_fuf@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c PH102 -g 0 -s 2020-II -S 1 -i ewcgrn_fuf@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 18 lionguy_uclhzxas@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 18 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 18 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u jyvxgu_qkvdvfz@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c GE108 -g 0 -s 2020-II -S 1 -i jyvxgu_qkvdvfz@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c GE -i 19 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 19 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ezldzdl_szc@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c GE109 -g 0 -s 2020-II -S 1 -i ezldzdl_szc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 20 nyjdv_rvlots@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c GE -i 20 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 20 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u arn_vtfp@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c BM101 -g 0 -s 2020-I -S 1 -i arn_vtfp@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 21 wcwu_rzboe@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 21 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 21 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ezldzdl_szc@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c GE107 -g 0 -s 2020-II -S 1 -i ezldzdl_szc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 22 txml_mcuetn@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 22 jyvxgu_qkvdvfz@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c GE -i 22 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 22 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ezldzdl_szc@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c NS102 -g 0 -s 2020-I -S 1 -i ezldzdl_szc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 23 nyjdv_rvlots@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c EC -i 23 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 23 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u txml_mcuetn@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA202 -g 0 -s 2021-II -S 1 -i txml_mcuetn@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 24 htjcwol_lmv@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 24 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 24 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u grgppb_hadd@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS202 -g 0 -s 2021-I -S 1 -i grgppb_hadd@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 25 zmgt_hbhpagcq@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 25 fveiq_ggfh@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HC -i 25 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 25 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u hyybjqve_majd@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CH203 -g 0 -s 2021-II -S 1 -i hyybjqve_majd@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 26 mlqsqjg_lxbi@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 26 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 26 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u hyybjqve_majd@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CH204 -g 0 -s 2021-I -S 1 -i hyybjqve_majd@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 27 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 27 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u enhcmn_qjvtkf@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CH231 -g 0 -s 2021-I -S 1 -i enhcmn_qjvtkf@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 28 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 28 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u bnkhca_aincssem@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CH220 -g 0 -s 2021-II -S 1 -i bnkhca_aincssem@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 29 hyybjqve_majd@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 29 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 29 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u jws_pef@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CY230 -g 0 -s 2021-II -S 1 -i jws_pef@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 30 hucneke_ofajr@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 30 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 30 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u nvuhtxv_eoa@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS202 -g 0 -s 2021-II -S 1 -i nvuhtxv_eoa@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PC -i 31 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 31 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u klrtzsjl_hgbwu@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS204 -g 0 -s 2021-II -S 1 -i klrtzsjl_hgbwu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 32 tpsa_zncb@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PC -i 32 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 32 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u foro_lbm@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c EE209 -g 0 -s 2021-II -S 1 -i foro_lbm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 33 avhrjrm_uwzq@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 33 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 33 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u foro_lbm@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c EE207 -g 0 -s 2021-I -S 1 -i foro_lbm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 34 avhrjrm_uwzq@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 34 ozd_nljxot@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 34 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 34 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u foro_lbm@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c EE206 -g 0 -s 2021-I -S 1 -i foro_lbm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 35 snd_yny@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 35 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 35 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u uvd_ndrwc@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA203 -g 0 -s 2021-I -S 1 -i uvd_ndrwc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 36 jqhjmszu_rjm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 36 rhaagb_ohmkfdeu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 36 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 36 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u grgppb_hadd@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS201 -g 0 -s 2021-I -S 1 -i grgppb_hadd@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HC -i 37 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 37 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ksyrtvt_pgabvnnl@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA204 -g 0 -s 2021-I -S 1 -i ksyrtvt_pgabvnnl@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 38 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 38 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u qcrrqlqn_fofdonmm@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA205 -g 0 -s 2021-II -S 1 -i qcrrqlqn_fofdonmm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 39 rhaagb_ohmkfdeu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 39 jqhjmszu_rjm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SC -i 39 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 39 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u qozpaw_rxfv@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c ME203 -g 0 -s 2021-II -S 1 -i qozpaw_rxfv@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 40 yqrvhtqf_ertk@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 40 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 40 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u jmolnl_frcti@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c ME205 -g 0 -s 2021-I -S 1 -i jmolnl_frcti@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 41 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 41 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u smuxeck_wulojphy@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MM206 -g 0 -s 2021-II -S 1 -i smuxeck_wulojphy@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 42 lsubk_lavsvx@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 42 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 42 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u smuxeck_wulojphy@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MM207 -g 0 -s 2021-II -S 1 -i smuxeck_wulojphy@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 43 lsubk_lavsvx@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 43 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 43 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u lsubk_lavsvx@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MM208 -g 0 -s 2021-I -S 1 -i lsubk_lavsvx@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 44 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 44 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u bkse_zyi@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CE301 -g 0 -s 2022-I -S 1 -i bkse_zyi@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 45 yrhemmh_hwb@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 45 gdi_rmgnepe@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 45 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 45 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u smmphht_imhfwnro@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CE302 -g 0 -s 2022-I -S 1 -i smmphht_imhfwnro@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 46 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 46 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u fimunzp_vaw@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CE303 -g 0 -s 2022-I -S 1 -i fimunzp_vaw@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 47 rhqt_hmax@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 47 smmphht_imhfwnro@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 47 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 47 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u kvvkfyad_gzfr@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS301 -g 0 -s 2022-II -S 1 -i kvvkfyad_gzfr@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HC -i 48 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 48 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ksyrtvt_pgabvnnl@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CP301 -g 0 -s 2022-I -S 1 -i ksyrtvt_pgabvnnl@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c CP -i 49 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 49 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u nyjdv_rvlots@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CP302 -g 0 -s 2022-II -S 1 -i nyjdv_rvlots@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 50 uvd_ndrwc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c CP -i 50 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 50 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u bnkhca_aincssem@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CH304 -g 0 -s 2022-II -S 1 -i bnkhca_aincssem@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 51 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 51 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u dbvw_bywvh@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CH305 -g 0 -s 2022-I -S 1 -i dbvw_bywvh@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 52 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 52 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u bwec_rai@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CH331 -g 0 -s 2022-I -S 1 -i bwec_rai@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 53 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 53 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ekbgwh_joxwss@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS304 -g 0 -s 2022-II -S 1 -i ekbgwh_joxwss@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PC -i 54 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 54 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ekbgwh_joxwss@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS305 -g 0 -s 2022-II -S 1 -i ekbgwh_joxwss@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 55 xik_bowzl@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 55 nvuhtxv_eoa@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PC -i 55 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 55 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u wezeihcj_uvx@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA426 -g 0 -s 2023-II -S 1 -i wezeihcj_uvx@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 56 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 56 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u smmphht_imhfwnro@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CE403 -g 0 -s 2023-I -S 1 -i smmphht_imhfwnro@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 57 rhqt_hmax@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 57 qys_evakxif@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 57 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 57 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u gdi_rmgnepe@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CE405 -g 0 -s 2023-I -S 1 -i gdi_rmgnepe@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 58 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 58 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u rhqt_hmax@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CE406 -g 0 -s 2023-I -S 1 -i rhqt_hmax@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 59 fimunzp_vaw@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 59 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 59 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u kkamqn_ykcbp@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CE407 -g 0 -s 2023-II -S 1 -i kkamqn_ykcbp@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 60 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 60 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u hyybjqve_majd@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CH420 -g 0 -s 2023-I -S 1 -i hyybjqve_majd@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c OE -i 61 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 61 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u zmgt_hbhpagcq@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS491 -g 0 -s 2023-II -S 1 -i zmgt_hbhpagcq@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 62 yjtz_xve@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 62 fveiq_ggfh@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HE -i 62 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 62 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u gjwxg_sxt@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS406 -g 0 -s 2023-II -S 1 -i gjwxg_sxt@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 63 sro_ohorq@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 63 yjtz_xve@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HE -i 63 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 63 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u fveiq_ggfh@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS463 -g 0 -s 2023-I -S 1 -i fveiq_ggfh@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HE -i 64 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 64 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u kvvkfyad_gzfr@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS405 -g 0 -s 2023-I -S 1 -i kvvkfyad_gzfr@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HE -i 65 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 65 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u uttojv_lue@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c PH457 -g 0 -s 2023-II -S 1 -i uttojv_lue@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 66 lwf_syc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 66 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 66 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ftknupr_faivwgpo@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CY427 -g 0 -s 2023-I -S 1 -i ftknupr_faivwgpo@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 67 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 67 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u mrfz_ehvalbky@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CY452 -g 0 -s 2023-I -S 1 -i mrfz_ehvalbky@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 68 iadix_datnukn@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 68 ftknupr_faivwgpo@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 68 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 68 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ekbgwh_joxwss@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS517 -g 0 -s 2023-II -S 1 -i ekbgwh_joxwss@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 69 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 69 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u rggzkzc_eveyets@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS535 -g 0 -s 2023-I -S 1 -i rggzkzc_eveyets@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 70 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 70 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u nvuhtxv_eoa@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS539 -g 0 -s 2023-I -S 1 -i nvuhtxv_eoa@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 71 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 71 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u rggzkzc_eveyets@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS503 -g 0 -s 2023-I -S 1 -i rggzkzc_eveyets@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 72 tpsa_zncb@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 72 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 72 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u xik_bowzl@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS533 -g 0 -s 2023-I -S 1 -i xik_bowzl@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 73 nvuhtxv_eoa@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 73 zgk_yum@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 73 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 73 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u qazgw_patu@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS543 -g 0 -s 2023-II -S 1 -i qazgw_patu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 74 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 74 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u qazgw_patu@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS546 -g 0 -s 2023-I -S 1 -i qazgw_patu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 75 nvuhtxv_eoa@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 75 xopus_nfj@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 75 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 75 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u xik_bowzl@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS550 -g 0 -s 2023-II -S 1 -i xik_bowzl@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 76 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 76 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u rggzkzc_eveyets@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS531 -g 0 -s 2023-I -S 1 -i rggzkzc_eveyets@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 77 zrvltnvj_mpibpls@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 77 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 77 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u qazgw_patu@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS536 -g 0 -s 2023-II -S 1 -i qazgw_patu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 78 pic_mkpwrqxy@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 78 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 78 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u tpsa_zncb@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS549 -g 0 -s 2023-II -S 1 -i tpsa_zncb@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 79 klrtzsjl_hgbwu@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 79 rggzkzc_eveyets@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 79 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 79 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u xopus_nfj@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS521 -g 0 -s 2023-I -S 1 -i xopus_nfj@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 80 xik_bowzl@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 80 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 80 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u sro_ohorq@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS505 -g 0 -s 2023-I -S 1 -i sro_ohorq@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 81 fveiq_ggfh@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HE -i 81 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 81 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u sro_ohorq@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS506 -g 0 -s 2023-I -S 1 -i sro_ohorq@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HE -i 82 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 82 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u zmgt_hbhpagcq@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c HS507 -g 0 -s 2023-I -S 1 -i zmgt_hbhpagcq@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 83 gjwxg_sxt@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 83 enjpfjh_tsgdfbmx@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c HE -i 83 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 83 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u wezeihcj_uvx@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA517 -g 0 -s 2023-II -S 1 -i wezeihcj_uvx@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 84 djsjg_ehwaksxk@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 84 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 84 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ghkiec_abyf@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CY516 -g 0 -s 2023-I -S 1 -i ghkiec_abyf@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 85 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 85 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u pic_mkpwrqxy@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS616 -g 0 -s 2023-I -S 1 -i pic_mkpwrqxy@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 86 zrvltnvj_mpibpls@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 86 ekbgwh_joxwss@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 86 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 86 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u ekbgwh_joxwss@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS604 -g 0 -s 2023-I -S 1 -i ekbgwh_joxwss@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 87 xik_bowzl@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 87 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 87 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u tpsa_zncb@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS603 -g 0 -s 2023-I -S 1 -i tpsa_zncb@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 88 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 88 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u htjcwol_lmv@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA628 -g 0 -s 2023-I -S 1 -i htjcwol_lmv@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 89 uvd_ndrwc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 89 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 89 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u qcrrqlqn_fofdonmm@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA605 -g 0 -s 2023-I -S 1 -i qcrrqlqn_fofdonmm@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 90 ksyrtvt_pgabvnnl@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 90 ezldzdl_szc@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 90 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 90 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u wcwu_rzboe@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c BM607 -g 0 -s 2023-I -S 1 -i wcwu_rzboe@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 91 kfwykkn_thd@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 91 oczviifq_whg@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 91 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 91 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u uwajpkzp_vssemplf@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c BM609 -g 0 -s 2023-II -S 1 -i uwajpkzp_vssemplf@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 92 esorxemy_bfui@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 92 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 92 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u fjlqgs_rqt@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c BM614 -g 0 -s 2023-I -S 1 -i fjlqgs_rqt@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 93 kfwykkn_thd@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 93 svcyn_muvfx@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 93 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 93 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u wcwu_rzboe@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c BM612 -g 0 -s 2023-II -S 1 -i wcwu_rzboe@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 94 oczviifq_whg@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 94 kfwykkn_thd@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 94 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 94 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u pic_mkpwrqxy@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c CS712 -g 0 -s 2023-I -S 1 -i pic_mkpwrqxy@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 95 zrvltnvj_mpibpls@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c PE -i 95 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 95 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u htjcwol_lmv@iitrpr.ac.in -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings add -c MA703 -g 0 -s 2023-II -S 1 -i htjcwol_lmv@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings instructor 96 jyvxgu_qkvdvfz@iitrpr.ac.in
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings category -d CS -p B.Tech -c SE -i 96 -y 2020
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar offerings update -i 96 -s Enrolling
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar config -u dean_ug -w iitrpr
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar curriculum add -c 24 -p="B.Tech" -t SC
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar curriculum add -c 6 -p="B.Tech" -t SE
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar curriculum add -c 23.5 -p="B.Tech" -t GE
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar curriculum add -c 36 -p="B.Tech" -t PC
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar curriculum add -c 6 -p="B.Tech" -t PE
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar curriculum add -c 15 -p="B.Tech" -t HC
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar curriculum add -c 6 -p="B.Tech" -t HE
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar curriculum add -c 3 -p="B.Tech" -t II
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar curriculum add -c 9 -p="B.Tech" -t CP
+java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar curriculum add -c 6 -p="B.Tech" -t OE

@@ -1,0 +1,5 @@
+1. Put the jar files the same directory where student.csv is present.
+2. Copy contents from cli.txt and paste it in command prompt. It may take 4-5 minutes to execute.
+3. After execution, paste sql.txt in postgresql command prompt.
+4. This will load dummy data into the database.
+5. Use the command java -jar .\AcademicsCLI-1.0-SNAPSHOT-all.jar report -F student.csv to generate the report. Make sure you are logged in with either postgres or academics_office account.

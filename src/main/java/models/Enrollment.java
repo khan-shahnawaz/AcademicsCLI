@@ -49,7 +49,6 @@ public class Enrollment extends BaseModel {
         PreparedStatement preparedStatement = Enrollment.connection.prepareStatement(properties.getProperty("select"));
         preparedStatement.setInt(1, id);
         preparedStatement.setString(2, entryNo);
-        System.out.println(preparedStatement);
         ResultSet resultSet = preparedStatement.executeQuery();
         if (resultSet.next()) {
             fillDetails(enrollment, resultSet);
@@ -154,7 +153,6 @@ public class Enrollment extends BaseModel {
             preparedStatement.setString(1, this.status);
             preparedStatement.setInt(2, this.id);
             preparedStatement.setString(3, this.entryNo);
-            System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
 
             this.updateLastSavedValues();
