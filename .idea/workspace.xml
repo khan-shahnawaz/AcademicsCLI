@@ -13,16 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Added database files">
-      <change afterPath="$PROJECT_DIR$/db/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/UML_DB.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/database/privileges.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/database/schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/database/triggers/calender.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/database/triggers/cgpa.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/database/triggers/prerequisites.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/db/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/enrollment.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/enrollment.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,11 +110,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -365,6 +358,9 @@
       <workItem from="1677943948841" duration="12919000" />
       <workItem from="1678039541947" duration="44610000" />
       <workItem from="1678131381587" duration="10486000" />
+      <workItem from="1678165446213" duration="1959000" />
+      <workItem from="1678168632853" duration="478000" />
+      <workItem from="1678169206195" duration="5215000" />
     </task>
     <task id="LOCAL-00001" summary="Added class for database connection">
       <created>1676203690303</created>
@@ -478,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678136846321</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added database files">
+      <created>1678165472198</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1678165472198</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +566,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AcademicsCLI$AcademicsCLI__shadowJar_.ic" NAME="AcademicsCLI [shadowJar] Coverage Results" MODIFIED="1677857835133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1678162038559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1678170440005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$CatalogTest.ic" NAME="CatalogTest Coverage Results" MODIFIED="1676740492223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$AcademicsCLI___Main_main___.ic" NAME="AcademicsCLI [:Main.main()] Coverage Results" MODIFIED="1678109099735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$.ic" NAME=" Coverage Results" MODIFIED="1676786889272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

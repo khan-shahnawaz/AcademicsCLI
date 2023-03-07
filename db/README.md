@@ -1,6 +1,19 @@
 # AcademicSystemDatabase
 Database for the Academic Management Project
 
+## Dependency
+
+- Postgresql V14.5 or above
+
+## Setup
+- Make sure that your system don't already have database with name *academics*
+- Execute the following Commands after starting postgres in terminal in the same directory
+```
+\i setup.sql
+```
+
+This will load all the tables and procedures required.
+This also creates a user named *dean_ug* with academics_office permission with password 'iitrpr' which can be changes later on.
 
 ## Tables
 
