@@ -5,7 +5,7 @@ plugins {
 }
 jacoco {
     toolVersion = "0.8.8"
-    reportsDir = file("$buildDir/jacoco")
+    reportsDir = file("/docs/reports")
 }
 group 'org.acad'
 version '1.0-SNAPSHOT'

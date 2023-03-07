@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="AcademicsCLI:jar" />
@@ -9,32 +12,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Fixed some bugs">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/acad/Profile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/acad/MainTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/acad/ProfileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/enrollment.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/instructors.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/students.csv" afterDir="false" />
+    <list default="true" id="f3f4d3a2-f9e7-4f3d-aea1-e3813e3fadeb" name="Changes" comment="Added database files">
+      <change afterPath="$PROJECT_DIR$/db/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/UML_DB.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/database/privileges.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/database/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/database/triggers/calender.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/database/triggers/cgpa.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/database/triggers/prerequisites.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/setup.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/access/DBConnectionSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/access/DBConnectionSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/BaseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Enrollment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Instructor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Instructor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Enrollment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/acad/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/acad/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subcommands/calender/Remove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subcommands/calender/Remove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gradesheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gradesheet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/instructor.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/instructor.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/student.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/student.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/ConfigurationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/ConfigurationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/EnrollmentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/EnrollmentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/OfferingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/OfferingTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/acad/ReportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/acad/ReportTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/student.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/student.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/enrollment.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/enrollment.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,38 +101,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java Projects/AcademicsCLI/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "D:/Java Projects/AcademicsCLI/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;90e30c19-e878-434d-a7ff-42a91e68c56f/database/\&quot;academics\&quot;&quot;
+    "RunConfigurationTargetLRU": [
+      "90e30c19-e878-434d-a7ff-42a91e68c56f/database/\"academics\""
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Java Projects\AcademicsCLI\src\main\resources" />
@@ -162,7 +151,7 @@
       <recent name="Models" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AcademicsCLI [shadowJar]">
+  <component name="RunManager" selected="Gradle.Tests in 'AcademicsCLI.test'">
     <configuration name="AcademicsCLI [:Main.main()]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -346,8 +335,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AcademicsCLI [shadowJar]" />
         <item itemvalue="Gradle.Tests in 'AcademicsCLI.test'" />
+        <item itemvalue="Gradle.AcademicsCLI [shadowJar]" />
         <item itemvalue="Gradle.EnrollmentTest" />
         <item itemvalue="Gradle.StudentTest" />
         <item itemvalue="Gradle.CatalogTest" />
@@ -375,7 +364,7 @@
       <workItem from="1677857179627" duration="7036000" />
       <workItem from="1677943948841" duration="12919000" />
       <workItem from="1678039541947" duration="44610000" />
-      <workItem from="1678131381587" duration="5224000" />
+      <workItem from="1678131381587" duration="10486000" />
     </task>
     <task id="LOCAL-00001" summary="Added class for database connection">
       <created>1676203690303</created>
@@ -482,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678130725904</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fixed some bugs">
+      <created>1678136846320</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1678136846321</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -548,7 +544,8 @@
     <MESSAGE value="Completed Transcript generation and graduation check" />
     <MESSAGE value="Completed some unit tests" />
     <MESSAGE value="Fixed some bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed some bugs" />
+    <MESSAGE value="Added database files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added database files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -566,7 +563,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AcademicsCLI$AcademicsCLI__shadowJar_.ic" NAME="AcademicsCLI [shadowJar] Coverage Results" MODIFIED="1677857835133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1678135821962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/AcademicsCLI$Tests_in__AcademicsCLI_test_.ic" NAME="Tests in 'AcademicsCLI.test' Coverage Results" MODIFIED="1678162038559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$CatalogTest.ic" NAME="CatalogTest Coverage Results" MODIFIED="1676740492223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$AcademicsCLI___Main_main___.ic" NAME="AcademicsCLI [:Main.main()] Coverage Results" MODIFIED="1678109099735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AcademicsCLI$.ic" NAME=" Coverage Results" MODIFIED="1676786889272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
