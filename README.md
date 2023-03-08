@@ -12,6 +12,7 @@ Command Line Interface to interact with the database on Academics Management Sys
 ```
 gradlew build
 ```
+If the above command doesn't work, use ./gradlew build. In linux systems, you need to give appropriate permissions to the gradlew file. <br>
 Note: Before running this command, make sure that the database server is running, has been initialised with tables and all tables are empty.
 <br>
 - This will unit run tests and generate report in */docs/reports*
